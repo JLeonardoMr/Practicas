@@ -727,23 +727,6 @@ class Movie{
           </div>`;
           break    
       }
-      // console.log();
-      //   resultadoMovie.innerHTML += `
-      //   <div class="card" style="width: 18rem;">
-      //     <div class="card-body">
-      //         <h4 class="card-title">${nombre}</h4>
-      //         <h5 class="card-title">${director}</h5>
-      //         <p class="card-text">Genero:`+ " " +` ${genero}</p>
-      //     </div>
-      //     <ul class="list-group list-group-flush">
-      //         <li class="list-group-item">${año}</li>
-      //         <li class="list-group-item">${estreno}</li>
-      //         <li class="list-group-item">${calificacion} ★</li>
-      //     </ul>
-      //     <div class="card-body">
-      //       <p class="card-text">Paises a estrenar:`+ " " +`${pais}</p>
-      //     </div>
-      //   </div>`;
     }
   }
 }
@@ -771,33 +754,6 @@ movieBtn.addEventListener('click',(e)=>{
       Msg()
       movie.aPrint()
     }
-
-
-
-    // let movie = new Movie([movieId,movieTitle.value, movieDirector.value, movieYear.value, movieDate.value, setPaises, setGeneros,radioValue]);
-    // movie.aPrint()
-    //   console.log(movie);
-    //////////////////////////////////////////////////////////////////
-    // if (movieId == 0 ) {
-    //       
-    // }else if (movieId == 1) {
-    //   let movie2 = new Movie(movieId,movieTitle.value, movieDirector.value, movieYear.value, movieDate.value, setPaises, setGeneros,radioValue);
-    //   movie2.aPrint();
-    //   movieId++ 
-    // }else if (movieId == 2) {
-    //   let movie3 = new Movie(movieId,movieTitle.value, movieDirector.value, movieYear.value, movieDate.value, setPaises, setGeneros,radioValue);
-    //   movie3.aPrint();
-    //   movieId++ 
-    // }else{
-    //   alertMsg.innerHTML = "Ya No se pueden agregar mas peliculas";
-    //   alertMsg.classList.remove('alert-success');
-    //   alertMsg.classList.add('alert-danger');
-    //   setTimeout(() => {
-    //   alertMsg.classList.remove('alert-danger');
-    //   alertMsg.innerHTML = "";
-    //   }, 4000);
-    // }
-    
   }
 })
 const valid = ()=>{
