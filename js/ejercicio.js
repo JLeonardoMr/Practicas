@@ -574,17 +574,17 @@ eBtn_26.addEventListener("click", (e) => {
       // let total = suma / arrayInt.length;
       // console.log(total);
       //!No lo entendi muy bien pero da el mismo resultado
-    }
+      // //! ESTO ME AYUDO A ENTENDER COMO FUNCIONA 
+      // let values = [9,8,7,6,5,4,3,2,1,0];
+      // let sum = values.reduce((previous, current) => current += previous);
+      // let avg = sum / values.length;
+      // avg = 28
+      // console.log(avg);
+      }
     eInput_26.innerHTML += `<div class="bg-primary col-auto my-0">
                               <p>Promedio <b class="bg-success">${total}</b></p>
                               
-                            </div>`;
-    // //! ESTO ME AYUDO A ENTENDER COMO FUNCIONA LA P26
-    // let values = [9,8,7,6,5,4,3,2,1,0];
-    // let sum = values.reduce((previous, current) => current += previous);
-    // let avg = sum / values.length;
-    // avg = 28
-    // console.log(avg);
+                            </div>`;    
   }
 });
 
@@ -922,20 +922,14 @@ const resultadoMovie = document.getElementById('resultadoMovie');
   
 // }
 
-
-
-
-
-
-
-
 // class Pelicula{
 //   constructor(id,titulo,director,año,estreno,pais,genero,calif)
 
 // }
 
 //! <!-- 27) Programa una clase llamada Pelicula.
-//*     La clase recibira un objeto al momento de instanciarse con los siguientes datos: id de la pelicula en IMDB, titulo, director, año de estreno, pais o paises de origen, generos y calificacion en IMBD.
+//*     La clase recibira un objeto al momento de instanciarse con los siguientes datos: id de la pelicula
+//*     en IMDB, titulo, director, año de estreno, pais o paises de origen, generos y calificacion en IMBD.
 //? - Todos los datos del objeto son obligatorios.
 //? - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 7 restantes numeros.
 //? - Valida que el titulo no rebase los 100 caracteres.
@@ -947,6 +941,9 @@ const resultadoMovie = document.getElementById('resultadoMovie');
 //? - Crea un metodo estatico que devuelva los generos aceptados*.
 //? - Valida que la calificacion sea un numero entre 0 y 10 pudiendo ser decimal de una posicion.
 //? - Crea un metodo que devuelva toda la ficha tecnica de la pelicula.
-//? - Apartir de un arreglo con la informacion de 3 peliculas genera 3 instancias de la clase de forma automatizada e imprime la ficha tecnica de cada pelicula.
+//? - Apartir de un arreglo con la informacion de 3 peliculas genera 3 instancias de la clase de forma automatizada
+//?   e imprime la ficha tecnica de cada pelicula.
 
-//     *Generos Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary, Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thirller, War, Westen. -->
+//*     Generos Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary, Drama, Family,
+//*     Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, 
+//*     Short, Sport, Talk-Show, Thirller, War, Westen. -->
