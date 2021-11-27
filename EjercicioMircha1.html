@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio #1</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <h3>ejercicio 1</h3>
+        <div class="row">
+            <form action="">
+                <div class="form-row d-flex">
+                    <div class="col-6">
+                        <label for="text1" class="form-group">Introduzca texto</label>
+                        <input id="text1" type="text" class="form-control" value="Hola Mundo">
+                    </div>
+                    <div class="col-2">
+                        <label for="input1" class="form-group"># Caracteres</label>
+                        <input id="input1" type="number" class="form-control" disabled>
+                    </div>
+                    <div class="col-4 d-flex">
+                        <input id="btn1" type="button" class="btn btn-success m-auto" value="Enviar">
+                    </div>
+                </div>                
+            </form>
+        </div>
+        <div class="row">
+            <form action="">
+                <div class="form-row d-flex">
+                    <div class="col-6">
+                        <label for="text2" class="form-group">Introduzca texto</label>
+                        <input id="text2" type="text" class="form-control" value="Hola Mundo">
+                    </div>
+                    <div class="col-2">
+                        <label for="input2" class="form-group"># Caracteres</label>
+                        <input id="input2" type="number" class="form-control" value="4">
+                    </div>
+                    <div class="col-2 ">
+                        <label for="input2" class="form-group">Cadena</label>
+                        <input id="input2-2" type="text" class="form-control disabled">
+                    </div>
+                    <div class="col-2 m-1 d-flex">
+                        <input id="btn2" type="button" class="btn btn-success m-auto" value="Enviar">
+                    </div>
+                </div>                
+            </form>
+        </div>
+        <div class="row">
+            <form action="">
+                <div class="form-row d-flex">
+                    <div class="col-4">
+                        <label for="text3" class="form-group">Introduzca texto</label>
+                        <input id="text3" type="text" class="form-control" value="Hola que tal">
+                    </div>
+                    <div class="col-4">
+                        <label for="input3" class="form-group"># Caracteres</label>
+                        <input id="input3" type="text" class="form-control" >
+                    </div>
+                    <div class="col-4 d-flex">
+                        <input id="btn3" type="button" class="btn btn-success m-auto" value="Enviar">
+                    </div>
+                </div>                
+            </form>
+        </div>
+        <div class="row">
+            <form action="">
+                <div class="form-row d-flex">
+                    <div class="col-6">
+                        <label for="text4" class="form-group">Introduzca texto</label>
+                        <input id="text4" type="text" class="form-control" value="Hola Mundo!!">
+                    </div>
+                    <div class="col-2">
+                        <label for="input4" class="form-group"># A repetir</label>
+                        <input id="input4" type="number" class="form-control" value="3" >
+                    </div>
+                    <div class="col-4 d-flex">
+                        <input id="btn4" type="button" class="btn btn-success m-auto" value="Enviar">
+                    </div>
+                    
+                </div>                
+            </form>
+            <div id="resultado" class="resultado col-12">
+
+            </div>
+        </div>
+    </div>   
+</div>
+<div class="container-fluid">
+    <h3>ejercicio 2</h3>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-4">
+                    <label for="text5" class="form-group">Introduzca texto</label>
+                    <input id="text5" type="text" class="form-control" value="Hola mundo">
+                </div>
+                <div class="col-4">
+                    <label for="input5" class="form-group"># Caracteres</label>
+                    <div id="input5" class="p-1 px-3"></div>
+                </div>
+                <div class="col-4 d-flex">
+                    <input id="btn5" type="button" class="btn btn-success m-auto" value="Enviar">
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-4">
+                    <label for="text6" class="form-group">Introduzca texto</label>
+                    <input id="text6" type="text" class="form-control" value="hola mundo adios mundo">
+                </div>
+                <div class="col-4">
+                    <label for="input6" class="form-group"># Caracteres</label>
+                    <input id="input6" type="text" class="form-control" disabled>
+                </div>
+                <div class="col-4 d-flex">
+                    <input id="btn6" type="button" class="btn btn-success m-auto" value="Enviar">
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-4">
+                    <label for="text7" class="form-group">Introduzca texto</label>
+                    <input id="text7" type="text" class="form-control" value="Salas">
+                </div>
+                <div class="col-4">
+                    <label for="input7" class="form-group">Palindromo?</label>
+                    <input id="input7" type="text" class="form-control" disabled>
+                </div>
+                <div class="col-4 d-flex">
+                    <input id="btn7" type="button" class="btn btn-success m-auto" value="Enviar">
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-4">
+                    <label for="text8" class="form-group">Introduzca texto</label>
+                    <input id="text8" type="text" class="form-control" value="xyz1, xyz2, xyz3, xyz4, xyz5">
+                </div>
+                <div class="col-4">
+                    <label for="input8" class="form-group"># Caracteres</label>
+                    <input id="input8" type="text" class="form-control" disabled>
+                </div>
+                <div class="col-4 d-flex">
+                    <input id="btn8" type="button" class="btn btn-success m-auto" value="Enviar">
+                </div>
+            </div>                
+        </form>
+    </div>
+</div>
+<div class="container-fluid">
+    <h3>ejercicio 3</h3>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-4">
+                    <label for="text9" class="form-group">Numero Ramdon 501 al 600</label>
+                    <input id="text9" type="number" class="form-control" disabled>
+                </div>
+                <div class="col-4 d-flex">
+                    <input id="btn9" type="button" class="btn btn-success m-auto" value="Ramdon">
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-4">
+                    <label for="text10" class="form-group">Introduzca texto</label>
+                    <input id="text10" type="number" class="form-control" value="2002">
+                </div>
+                <div class="col-4">
+                    <label for="input10" class="form-group">Capicua?</label>
+                    <input id="input10" type="text" class="form-control" disabled>
+                </div>
+                <div class="col-4 d-flex">
+                    <input id="btn10" type="button" class="btn btn-success m-auto" value="Enviar">
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-4">
+                    <label for="text11" class="form-group">Introduzca numero</label>
+                    <input id="text11" type="number" class="form-control" value="5">
+                </div>
+                <div class="col-4">
+                    <label for="input11" class="form-group">factorial</label>
+                    <input id="input11" type="text" class="form-control" disabled>
+                </div>
+                <div class="col-4 d-flex">
+                    <input id="btn11" type="button" class="btn btn-success m-auto" value="Enviar">
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-4">
+                    <label for="text12" class="form-group">Introduzca numero</label>
+                    <input id="text12" type="number" class="form-control" value="7">
+                </div>
+                <div class="col-4">
+                    <label for="input12" class="form-group">es Primo?</label>
+                    <input id="input12" type="text" class="form-control" disabled>
+                </div>
+                <div class="col-4 d-flex">
+                    <input id="btn12" type="button" class="btn btn-success m-auto" value="Enviar">
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-4">
+                    <label for="text13" class="form-group">Introduzca numero</label>
+                    <input id="text13" type="number" class="form-control" value="29">
+                </div>
+                <div class="col-4">
+                    <label for="input13" class="form-group">es Par??</label>
+                    <input id="input13" type="text" class="form-control" disabled>
+                </div>
+                <div class="col-4 d-flex">
+                    <input id="btn13" type="button" class="btn btn-success m-auto" value="Enviar">
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-5 mx-1">
+                    <label for="text14" class="form-group">C°</label>
+                    <input id="text14" type="number" class="form-control" value="">
+                </div>
+                <div class="col-5 mx-1">
+                    <label for="input14" class="form-group">°F</label>
+                    <input id="input14" type="number" class="form-control">
+                </div>
+            </div>                
+        </form>
+    </div>
+</div>
+<div class="container-fluid">
+    <h3>ejercicio 4</h3>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-2 mx-1">
+                    <label for="text15" class="form-group">Binario a Decimal</label>
+                    <input id="text15" type="number" class="form-control" placeholder="101010011">
+                </div>
+                <div class="col-3">
+                    <label for="input15" class="form-group">Max 13Dig</label>
+                    <input id="input15" type="text" class="form-control" readonly>
+                </div>
+                
+                <div class="col-2 mx-1">
+                    <label for="text15_2" class="form-group">Decimal a Binario</label>
+                    <input id="text15_2" type="number" class="form-control" placeholder="1234567890">
+                </div>
+                <div class="col-3">
+                    <label for="input15_2" class="form-group">Max 13Dig</label>
+                    <input id="input15_2" type="text" class="form-control" readonly>
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-3 mx-1">
+                    <label for="text16" class="form-group">Monto</label>
+                    <input id="text16" type="number" class="form-control" placeholder="Ingrese numero">
+                </div>
+                <div class="col-3 mx-1">
+                    <label for="input16" class="form-group">Descuento %</label>
+                    <input id="input16" type="text" maxlength="3" class="form-control" placeholder="Ingrese %">
+                </div>
+                <div class="col-3 mx-1">
+                    <label for="input_16" class="form-group">Precio</label>
+                    <input id="input_16" type="text" class="form-control" disabled placeholder="Resultado">
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-3 mx-1">
+                    <label for="text17" class="form-group">Fecha en que naciste</label>
+                    <input id="text17" type="date" class="form-control" placeholder="Ingrese numero">
+                </div>
+                <div class="col-3 mx-1">
+                    <label for="input17" class="form-group">tienes</label>
+                    <input id="input17" type="text" maxlength="3" class="form-control" placeholder="">
+                </div>
+            </div>                
+        </form>
+    </div>
+</div>
+<div class="container-fluid">
+    <h3>ejercicio 5</h3>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-3 mx-1">
+                    <label for="text18" class="form-group">Palabra o Frase</label>
+                    <input id="text18" type="text" class="form-control" autocomplete="off">
+                </div>
+                <div class="col-3 mx-1">
+                    <label for="input18" class="form-group">Vocales</label>
+                    <input id="input18" type="text" maxlength="3" class="form-control" placeholder="" disabled>
+                </div>
+                <div class="col-3 mx-1">
+                    <label for="input_18" class="form-group">Consonantes</label>
+                    <input id="input_18" type="text" class="form-control" disabled placeholder="">
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-5">
+                    <label for="text19" class="form-group">Nombre</label>
+                    <input id="text19" type="text" class="form-control" placeholder="Ingrese Nombre">
+                </div>
+                <div class="col-3">
+                    <label for="input19" class="form-group">Mi nombre es valido?</label>
+                    <input id="input19" type="text" class="form-control" disabled>
+                </div>
+                <div class="col-19 m-1 d-flex">
+                    <input id="btn19" type="button" class="btn btn-success m-auto" value="Enviar">
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-5">
+                    <label for="text20" class="form-group">Correo</label>
+                    <input id="text20" type="text" class="form-control" placeholder="Ingrese Correo">
+                </div>
+                <div class="col-3">
+                    <label for="input20" class="form-group">Mi correo es valido?</label>
+                    <input id="input20" type="mail" class="form-control" disabled>
+                </div>
+                <div class="col-2 m-1 d-flex">
+                    <input id="btn20" type="button" class="btn btn-success m-auto" value="Enviar">
+                </div>
+            </div>                
+        </form>
+    </div>
+</div>
+<div class="container-fluid">
+    <h3>ejercicio 6</h3>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-3 mx-1">
+                    <label for="text21" class="form-group"># Al cuadrado</label>
+                    <input id="text21" type="text"  value=" ,,1, 4 , ,5" class="form-control" autocomplete="off">
+                </div>
+                <div class="col-6 mx-1">
+                    <label for="input21" class="form-group">Resultado</label>
+                    <div id="input21" class="d-flex flex-wrap">
+                        
+                    </div>
+                </div>
+                <div class="col-2 m-1 d-flex">
+                    <input id="btn21" type="button" class="btn btn-success m-auto" value="agregar">
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-3 mx-1">
+                    <label for="text22" class="form-group"># Numero Mayor y Menor</label>
+                    <input id="text22" type="text"  value="1,4,5,99,-60" class="form-control" autocomplete="off">
+                </div>
+                <div class="col-6 mx-1">
+                    <label for="input22" class="form-group">Resultado</label>
+                    <div id="input22" class="d-flex flex-wrap">
+                        
+                    </div>
+                </div>
+                <div class="col-2 m-1 d-flex">
+                    <input id="btn22" type="button" class="btn btn-success m-auto" value="agregar">
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-3 mx-1">
+                    <label for="text23" class="form-group">Pares e Impares</label>
+                    <input id="text23" type="text"  value="1,2,3,4,5,6,7,8,9,0" class="form-control" autocomplete="off">
+                </div>
+                <div class="col-6 mx-1">
+                    <label for="input23" class="form-group">Resultado</label>
+                    <div id="input23" class="d-flex flex-wrap">
+                        
+                    </div>
+                </div>
+                <div class="col-2 m-1 d-flex">
+                    <input id="btn23" type="button" class="btn btn-success m-auto" value="agregar">
+                </div>
+            </div>                
+        </form>
+    </div>
+</div>
+<div class="container-fluid">
+    <h3>ejercicio 7</h3>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-3 mx-1">
+                    <label for="text24" class="form-group">Ascencion de numeros</label>
+                    <input id="text24" type="text"  value="7,5,7,8,6" class="form-control" autocomplete="off">
+                </div>
+                <div class="col-6 mx-1">
+                    <label for="input24" class="form-group">Resultado</label>
+                    <div id="input24" class="d-flex flex-wrap">                        
+                    </div>
+                </div>
+                <div class="col-2 m-1 d-flex">
+                    <input id="btn24" type="button" class="btn btn-success m-auto" value="agregar">
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-3 mx-1">
+                    <label for="text25" class="form-group">Eliminar duplicados</label>
+                    <input id="text25" type="text"  value="x,10,x,2,10,10" class="form-control" autocomplete="off">
+                </div>
+                <div class="col-6 mx-1">
+                    <label for="input25" class="form-group">Resultado</label>
+                    <div id="input25" class="d-flex flex-wrap">                        
+                    </div>
+                </div>
+                <div class="col-2 m-1 d-flex">
+                    <input id="btn25" type="button" class="btn btn-success m-auto" value="agregar">
+                </div>
+            </div>                
+        </form>
+    </div>
+    <div class="row">
+        <form action="">
+            <div class="form-row d-flex">
+                <div class="col-3 mx-1">
+                    <label for="text26" class="form-group">calcular promedio</label>
+                    <input id="text26" type="text"  value="9,8,7,6,5,4,3,2,1,0" class="form-control" autocomplete="off">
+                </div>
+                <div class="col-6 mx-1">
+                    <label for="input26" class="form-group">Resultado</label>
+                    <div id="input26" class="d-flex flex-wrap">                        
+                    </div>
+                </div>
+                <div class="col-2 m-1 d-flex">
+                    <input id="btn26" type="button" class="btn btn-success m-auto" value="agregar">
+                </div>
+            </div>                
+        </form>
+    </div>
+</div>
+<div class="container-fluid">
+    <h3>Ultimo Ejercicio 8</h3>
+    <div class="row">
+        <form class="form-row d-flex flex-wrap">
+            <div class="col-6 px-3">
+                <label for="titulo">Titulo</label>
+                <input type="text" id="titulo" class="form-control" autocomplete="off" value="Godzilla">
+            </div>
+            <div class="col-6 px-3">
+                <label for="directo">Director</label>
+                <input type="text" id="director" class="form-control" autocomplete="off" value="JLeonardo Monsalves">
+            </div>
+            <div class="col-2 px-3 my-2">
+                <label for="año">Año</label>
+                <select name="año" id="año" class="form-select">
+                </select>                
+            </div>
+            <div class="col-3 px-3 my-2" >
+                <label for="estreno">Estreno</label>
+                <input type="date" id="estreno" class="form-control" value="1994-04-10">
+            </div>
+            <div class="col-4 px-3 my-2">
+                <label for="titulo">Seleciona</label>
+                <select name="pais" id="pais" class="form-select">
+                    <option selected hidden>Paises</option>
+                    
+                </select>
+                <div class="selectedCont" id="paises">                    
+                </div>
+            </div>
+            <div class="col-3  my-2">
+                <label for="titulo">Seleciona</label>
+                <select name="pais" id="genero" class="form-select">
+                    <option selected hidden>Generos</option>
+                    
+                </select>
+                <div class="selectedCont" id="generos">         
+                </div>
+            </div>
+            <div class="col-auto d-flex m-auto">
+                <label for="titulo">Calificacion:</label>
+                <div class="clasificacion">
+                    <input class="radioInp" id="radio1" type="radio" name="estrellas" value="5" onclick="radio(5)">
+                    <label class="radio" for="radio1">★</label>
+                    <input class="radioInp" id="radio2" type="radio" name="estrellas" value="4" onclick="radio(4)">
+                    <label class="radio" for="radio2">★</label>
+                    <input class="radioInp" id="radio3" type="radio" name="estrellas" value="3" onclick="radio(3)">
+                    <label class="radio" for="radio3">★</label>
+                    <input class="radioInp" id="radio4" type="radio" name="estrellas" value="2" onclick="radio(2)">
+                    <label class="radio" for="radio4">★</label>
+                    <input class="radioInp" id="radio5" type="radio" name="estrellas" value="1" onclick="radio(1)">
+                    <label class="radio" for="radio5">★</label>
+                </div>
+            </div>
+            <input type="button" value="Guardar" id="guardar" class="btn btn-success">
+            <div class="alert " id="alertMsg"></div>
+        </form>
+    </div>
+    <div id="resultadoMovie" class="row">  
+    </div>
+</div>
+<script type="text/javascript" src="js/ejercicio.js"></script>
+</body>
+</html>
+    <!--? PARTE 1 -->
+<!-- 1)Programa una Funcion que cuente el numero de caracteres de una cadena de texto
+    pe. miFuncion("Hola Mundo") devolvera 10 -->
+<!-- 2)Programa una funcion que te devuelva el texto recortado segun el numero de caracteres indicados 
+    pe. miFuncion("Hola Mundo",4) devolvera "Hola"-->
+<!-- 3)Programa una funcion que dada una String te devuelva un Array de texto separados por cierto caracter.
+    pe. miFuncion("Hola que tal","") devolvera["hola","que","tal"]-->
+<!-- 4)Programa una funcion que repita un texto X numero de veces.
+    pe. miFuncion("Hola Mundo", 3) devolvera Hola Mundo x3-->
+    <!--? PARTE 2 -->
+<!-- 5)Programa una funcion que invierta las palabras de una cadena de texto
+    p. miFuncion("Hola Mundo") devolvera "odnuM aloH" -->
+<!-- 6)Programa una funcion que para contar el numero de veces que se repite una palabra en una texto largo
+    p. miFuncion("Hola mundo. Adios mundo","mundo") devolvera 2 -->
+<!-- 7)Programar una funcion que valide si una palabra o frase dada, es un palindromo (que se lee igual en un sentido que en otro)
+    p. miFuncion("Salas") devolvera true -->
+<!-- 8)Programa una funcion que elimine cierto patron de caracteres de un texto dado
+    pe. miFuncion("xyz1, xyz2, xyz3, xyz4, xyz5, xyz") devolvera "1,2,3,4 y 5" -->
+    <!--? PARTE 3-->
+<!-- 9) Programa una funcion que obtenga un numero aleatorio entre 501 y 600 -->
+<!-- 10) Programa una funcion que reciba un numero y evalue si es capicua o no(que se lee igual en un sentido que en otro) 
+    pe. miFuncion(devolvera true)-->
+<!-- 11) Programa una funcion que calcule el factorial de un numero (el factorial de un numero entero positivo n, se define como el producto de todos los numeros enteros positivos desde 1 hasta n)
+    pe. miFuncion(5) devolvera 120 -->
+<!-- 12) Programa una funcion que determine si un numero es primo (aquel que solo es divisible por si mismo y 1) o no
+    pe. miFuncion(7) devolvera true -->
+<!-- 13) Programa una funcion que determine si un numero es par o impar
+    pe. miFuncion(29) devolvera impar -->
+<!-- 14) Programa una funcion para convertir grados celsius a fahrenheit y viceversa
+    pe. miFuncion(0,"C") devolvera 32°F -->
+    <!--? PARTE 4-->
+<!-- 15) Programa una funcion para convertir numeros de base binaria a decimal y viceversa
+    pe. miFuncion(100,2) devolvera 4 base 10 -->
+<!-- 16) Programa una funcion que devuelva el monto final despues de aplicar un descuento a una cantidad dada
+    pe. miFuncion(1000,20) devolvera 800 -->
+<!-- 17) Programa una funcion que dada una fecha valida determine cuantos años han pasado hasta el dia de hoy
+    pe. miFuncion(new Date(1964,4,23)) devolvera 35 años (en 2020) -->
+    <!--? PARTE 5-->
+<!-- 18) Programa una funcion que dada una cadena de texto cuente el numero de vocales y consonantes
+    pe. miFuncion(Hola Mundo) devuelva Vocales: 4, consonantes: 5 -->
+<!-- 19) Programa una funcion que valide que un texto sea un nombre valido
+    pe. miFuncion("Leonardo Monsalves") devuelve true -->
+<!-- 20) Programa una funcion que valide que un texto sea un email valido
+    pe. miFuncion("ejemplo@ejem.plo") devuelve true -->
+    <!--? PARTE  6-->
+<!-- 21) Programa una funcion que dado un array numerico devuelve otro array con los numeros evaluados al cuadrado
+    pe. miFuncion([1,4,5])devolvera [1,16,25] -->
+<!-- 23) Programa una funcion que dado un array devuelva el numero mas alto y el mas bajo de dicho array
+    pe. miFuncion([1,4,5,99,-60])devolvera [99,-60] -->
+<!-- 24) Programa una funcion que dado un array de numeros devuelva un objeto con 2 arreglos en el primero almacena los numeros pares y en el segundo los impares
+    pe. miFuncion([1,2,3,4,5,6,7,8,9,0])devolvera {pares:2,4,6,8,0}, impares[1,3,5,7,9] -->
+    <!--? PARTE  7-->
+<!-- 24) Programa una funcion que dado un arreglo de numeros devuelva un objeto con dos arreglos, el primero tendra los numeros ordenados en forma ascendente y el segundo de forma descendiente
+    pe. miFuncion([7,5,7,8,6]) deolvera { asc [5,6,7,7,8], desc[8,7,7,6,5]} -->
+<!-- 25) Programa una funcion que dado un arreglo de elementos, elimine los duplicados
+    pe. miFuncion(["x",10,"x",2,"10",10]) -->
+<!-- 26)Programa una funcion que dado un arreglo de numeros obtenga el promedio
+    pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolvera 4.5 -->
+    <!--? PARTE  8-->
+<!-- 27) Programa una clase llamada Pelicula.
+    La clase recibira un objeto al momento de instanciarse con los siguientes datos: id de la pelicula en IMDB, titulo, director, año de estreno, pais o paises de origen, generos y calificacion en IMBD.
+        - Todos los datos del objeto son obligatorios.
+        - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 7 restantes numeros.
+        - Valida que el titulo no rebase los 100 caracteres.
+        - Valida que el director no rebase los 50 caracteres.
+        - Valida que el año de estreno sea un numero entero de 4 digitos.
+        - Valida que el pais o paises sea introducido en forma de arreglo.
+        - Valida que los generos sean introducidos en forma de arreglo.
+        - Valida que los generos introducidos esten dentro de los generos aceptados*.
+        - Crea un metodo estatico que devuelva los generos aceptados*.
+        - Valida que la calificacion sea un numero entre 0 y 10 pudiendo ser decimal de una posicion.
+        - Crea un metodo que devuelva toda la ficha tecnica de la pelicula.
+        - Apartir de un arreglo con la informacion de 3 peliculas genera 3 instancias de la clase de forma automatizada e imprime la ficha tecnica de cada pelicula.
+
+    *Generos Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary, Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thirller, War, Westen. -->
