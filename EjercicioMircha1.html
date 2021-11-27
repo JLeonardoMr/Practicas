@@ -82,9 +82,7 @@
                     
                 </div>                
             </form>
-            <div id="resultado" class="resultado col-12">
-
-            </div>
+            <div id="resultado" class="resultado col-12"></div>
         </div>
     </div>   
 </div>
@@ -269,8 +267,7 @@
                 <div class="col-3">
                     <label for="input15" class="form-group">Max 13Dig</label>
                     <input id="input15" type="text" class="form-control" readonly>
-                </div>
-                
+                </div>                
                 <div class="col-2 mx-1">
                     <label for="text15_2" class="form-group">Decimal a Binario</label>
                     <input id="text15_2" type="number" class="form-control" placeholder="1234567890">
@@ -381,9 +378,7 @@
                 </div>
                 <div class="col-6 mx-1">
                     <label for="input21" class="form-group">Resultado</label>
-                    <div id="input21" class="d-flex flex-wrap">
-                        
-                    </div>
+                    <div id="input21" class="d-flex flex-wrap"></div>
                 </div>
                 <div class="col-2 m-1 d-flex">
                     <input id="btn21" type="button" class="btn btn-success m-auto" value="agregar">
@@ -400,9 +395,7 @@
                 </div>
                 <div class="col-6 mx-1">
                     <label for="input22" class="form-group">Resultado</label>
-                    <div id="input22" class="d-flex flex-wrap">
-                        
-                    </div>
+                    <div id="input22" class="d-flex flex-wrap"></div>
                 </div>
                 <div class="col-2 m-1 d-flex">
                     <input id="btn22" type="button" class="btn btn-success m-auto" value="agregar">
@@ -419,9 +412,7 @@
                 </div>
                 <div class="col-6 mx-1">
                     <label for="input23" class="form-group">Resultado</label>
-                    <div id="input23" class="d-flex flex-wrap">
-                        
-                    </div>
+                    <div id="input23" class="d-flex flex-wrap"></div>
                 </div>
                 <div class="col-2 m-1 d-flex">
                     <input id="btn23" type="button" class="btn btn-success m-auto" value="agregar">
@@ -520,8 +511,7 @@
             <div class="col-3  my-2">
                 <label for="titulo">Seleciona</label>
                 <select name="pais" id="genero" class="form-select">
-                    <option selected hidden>Generos</option>
-                    
+                    <option selected hidden>Generos</option>                    
                 </select>
                 <div class="selectedCont" id="generos">         
                 </div>
@@ -573,7 +563,8 @@
 <!-- 9) Programa una funcion que obtenga un numero aleatorio entre 501 y 600 -->
 <!-- 10) Programa una funcion que reciba un numero y evalue si es capicua o no(que se lee igual en un sentido que en otro) 
     pe. miFuncion(devolvera true)-->
-<!-- 11) Programa una funcion que calcule el factorial de un numero (el factorial de un numero entero positivo n, se define como el producto de todos los numeros enteros positivos desde 1 hasta n)
+<!-- 11) Programa una funcion que calcule el factorial de un numero (el factorial de un numero entero positivo n, se define como el producto
+    de todos los numeros enteros positivos desde 1 hasta n)
     pe. miFuncion(5) devolvera 120 -->
 <!-- 12) Programa una funcion que determine si un numero es primo (aquel que solo es divisible por si mismo y 1) o no
     pe. miFuncion(7) devolvera true -->
@@ -600,10 +591,12 @@
     pe. miFuncion([1,4,5])devolvera [1,16,25] -->
 <!-- 23) Programa una funcion que dado un array devuelva el numero mas alto y el mas bajo de dicho array
     pe. miFuncion([1,4,5,99,-60])devolvera [99,-60] -->
-<!-- 24) Programa una funcion que dado un array de numeros devuelva un objeto con 2 arreglos en el primero almacena los numeros pares y en el segundo los impares
+<!-- 24) Programa una funcion que dado un array de numeros devuelva un objeto con 2 arreglos en el primero almacena los numeros pares
+    y en el segundo los impares
     pe. miFuncion([1,2,3,4,5,6,7,8,9,0])devolvera {pares:2,4,6,8,0}, impares[1,3,5,7,9] -->
     <!--? PARTE  7-->
-<!-- 24) Programa una funcion que dado un arreglo de numeros devuelva un objeto con dos arreglos, el primero tendra los numeros ordenados en forma ascendente y el segundo de forma descendiente
+<!-- 24) Programa una funcion que dado un arreglo de numeros devuelva un objeto con dos arreglos, el primero tendra los numeros ordenados
+    en forma ascendente y el segundo de forma descendiente
     pe. miFuncion([7,5,7,8,6]) deolvera { asc [5,6,7,7,8], desc[8,7,7,6,5]} -->
 <!-- 25) Programa una funcion que dado un arreglo de elementos, elimine los duplicados
     pe. miFuncion(["x",10,"x",2,"10",10]) -->
@@ -611,7 +604,8 @@
     pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolvera 4.5 -->
     <!--? PARTE  8-->
 <!-- 27) Programa una clase llamada Pelicula.
-    La clase recibira un objeto al momento de instanciarse con los siguientes datos: id de la pelicula en IMDB, titulo, director, año de estreno, pais o paises de origen, generos y calificacion en IMBD.
+    La clase recibira un objeto al momento de instanciarse con los siguientes datos: id de la pelicula en IMDB, titulo, director, año de
+    estreno, pais o paises de origen, generos y calificacion en IMBD.
         - Todos los datos del objeto son obligatorios.
         - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 7 restantes numeros.
         - Valida que el titulo no rebase los 100 caracteres.
@@ -623,6 +617,9 @@
         - Crea un metodo estatico que devuelva los generos aceptados*.
         - Valida que la calificacion sea un numero entre 0 y 10 pudiendo ser decimal de una posicion.
         - Crea un metodo que devuelva toda la ficha tecnica de la pelicula.
-        - Apartir de un arreglo con la informacion de 3 peliculas genera 3 instancias de la clase de forma automatizada e imprime la ficha tecnica de cada pelicula.
+        - Apartir de un arreglo con la informacion de 3 peliculas genera 3 instancias de la clase de forma automatizada e imprime la
+        ficha tecnica de cada pelicula.
 
-    *Generos Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary, Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thirller, War, Westen. -->
+    *Generos Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary, Drama, Family, Fantasy,
+    Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show,
+    Thirller, War, Westen. -->
