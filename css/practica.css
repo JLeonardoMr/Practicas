@@ -1,0 +1,113 @@
+.container{
+    background-color: white;
+    width: 400px;
+    height: 400px;
+    display: flex; 
+}
+/* .container:hover .rotate_place{
+    transform: rotate(180deg);
+}
+.container:hover .circle-rotate{
+    transform: rotate(-180deg);
+} */
+.container_rotate{
+    background-color: rgb(84, 82, 82);
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    margin: auto;
+}
+.container_rotate h1{
+    position: absolute;
+    margin: 100px 100px 100px 80px;
+    z-index: 1;
+}
+.container_rotate::after{
+    content:'';
+    background-color: white;
+    padding: 100px;
+    border-radius: 100%;
+    position: absolute;
+    /*DIVIDI 250 / 10 = 25PX*/
+    margin: 25px 25px 25px 25px;
+}
+.rotate{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    background: rgb(26, 24, 38);
+    transition:all 1s;
+}
+.container_circle{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.container_circle2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.container_circle3{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+
+}
+.circle {
+    background-color: rgb(100, 100, 100);
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    transition:all 1s;
+}
+.circle img{
+    position: absolute;
+    border-radius: 100%;
+    width: 40px;
+    padding: 5px;
+}
+.c4, .c5 {    
+    margin: 0 -39px 0 -39px;
+}
+.c2 {
+    margin: -39px 0;
+}
+.c7 {
+    margin: 39px 0;
+}
+.rotate_place-1{
+    transform: rotate(-45deg);
+}
+.rotate_place-2{
+    transform: rotate(-90deg);
+}
+.rotate_place-3{
+    transform: rotate(-135deg);
+}
+.rotate_place-4{
+    transform: rotate(0deg);
+}
+.rotate_place-5{
+    transform: rotate(-180deg);
+}
+.rotate_place-6{
+    transform: rotate(-315deg);
+}
+.rotate_place-7{
+    transform: rotate(-270deg);
+}
+.rotate_place-8{
+    transform: rotate(-225deg);
+}
+.cards-container{
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    flex-wrap: wrap;
+}
+.cards{
+    margin:10px;
+}

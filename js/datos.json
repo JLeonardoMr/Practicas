@@ -1,0 +1,15 @@
+{
+    "cadena": "leo",
+    "numero": "35",
+    "booleano": "true",
+    "arreglo": [
+        "corre",
+        "programar",
+        "cocinar"
+    ],
+    "objeto":{
+        "twitter": "@JLeonardoMr",
+        "email": "jhondri1004@gmail.com"
+    },
+    "nulo": "null"
+}

@@ -706,27 +706,33 @@ let movieId = 0;
 let movieArray = [];
 class Movie{
   constructor(array){
-    this.array = array;
+    this.array;
     this.aPrint = function () {
+      resultadoMovie.innerHTML = ''; 
       for (let i = 0; i < array.length; i++) {
-        resultadoMovie.innerHTML += `
+        console.log(array[i]);
+        let arr = array[i];
+        for (let y = 0; y < arr.length; y++) {
+          console.log(arr[y]);
+          resultadoMovie.innerHTML += `
           <div class="card" style="width: 18rem;">
             <div class="card-body">
-                <h4 class="card-title">${array[1]}</h4>
-                <h5 class="card-title">${array[2]}</h5>
-                <p class="card-text">Genero: ${array[6]}</p>
+                <h4 class="card-title">${arr[1]}</h4>
+                <h5 class="card-title">${arr[2]}</h5>
+                <p class="card-text">Genero: ${arr[6]}</p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">${array[3]}</li>
-                <li class="list-group-item">${array[4]}</li>
-                <li class="list-group-item">${array[7]} ★</li>
+                <li class="list-group-item">${arr[3]}</li>
+                <li class="list-group-item">${arr[4]}</li>
+                <li class="list-group-item">${arr[7]} ★</li>
             </ul>
             <div class="card-body">
-              <p class="card-text">Paises a estrenar: ${array[5]}</p>
+              <p class="card-text">Paises a estrenar: ${arr[5]}</p>
             </div>
           </div>`;
-          break    
-      }
+          break 
+        }
+      }  
     }
   }
 }
@@ -749,7 +755,7 @@ movieBtn.addEventListener('click',(e)=>{
       Msg();
     }else{
       movieArray.push(prueba);
-      let movie = new Movie(prueba)
+      let movie = new Movie(movieArray)
       valid()
       Msg()
       movie.aPrint()

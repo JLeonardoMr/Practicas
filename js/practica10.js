@@ -368,7 +368,7 @@
     //TODO Da la Hora Local
 // console.log(Date())
 
-let fecha = new Date();
+// let fecha = new Date();
 //TODO Da el dia del mes
 // console.log(fecha.getDate());
 //TODO Da el dia de la semana D L M Mi J V S -> 0 1 2 3 4 5 6

@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/practica.css">
+
+    <style>
+        :root{
+            --green-color:#3ED843;
+            --slateBlue-color:slateblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>Asincronia en JavaScript</h1> -->
+    <!--! setTimeout &  setInterval -->
+    <!-- <script>
+        console.log("Inicio")
+        setTimeout(() => {
+            console.log("Ejecutando un setTimeout, esto se ejecuta una sola vez");
+        }, 3000);
+
+        setInterval(() => {
+            console.log("Ejecutando un setInterval, esto se ejecuta indefinidamente cada cierto intervalo de tiempo");
+        }, 1000);
+        //////////////////////////////////////////////
+        let timeOut = setTimeout(() => {
+            console.log("Ejecutando un setTimeout, esto se ejecuta una sola vez");
+        }, 3000);
+
+        clearTimeout(timeOut)
+        ///////////////////
+        let interval = setInterval(() => {
+            console.log("Ejecutando un setInterval, esto se ejecuta indefinidamente cada cierto intervalo de tiempo");
+        }, 1000);
+
+        clearInterval(interval)
+    </script> -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! Procesamiento Single thread & Multi thread -->
+    <!--? Operaciones de CPU y Operaciones de I / O. -->
+    <!--? Operaciones Concurrentes y Paralelas -->
+    <!--? Operaciones Bloqueantes y No Bloqueantes -->
+    <!--? Operaciones Sincronas y Asincronas -->
+    <!-- <script> 
+    //* Codigo Sincrono Bloqueante *// 
+        !(()=>{
+            console.log("Codigo Sincrono");
+            console.log("Inicio");
+            function dos() {
+                console.log("dos");
+            }
+            function uno() {
+                console.log("uno");
+                dos();
+                console.log("tres");
+            }
+            uno();
+            console.log("Fin");
+            console.log("**********************");
+        })()
+    //* Codigo Asincrono No Bloqueante *//
+        !(()=>{
+            console.log("Codigo Asincrono");
+            console.log("Inicio");
+            function dos() {
+                setTimeout(() => {
+                    console.log("dos");                    
+                }, 3000);
+            }
+            function uno() {
+                setTimeout(() => {
+                    console.log("uno");
+                    dos();
+                    console.log("tres");
+                }, 0);                
+            }
+            uno();
+        })()
+    </script> -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+
+    <!--! Callbacks -->
+    <!-- <script>
+        //*<!--! aqui nuestra funcion que va a darnos un numero al cuadrado *//
+        function cuadradoCallback(value, callback) {
+            setTimeout(() => {
+                callback(value, value * value)
+            }, 0 | Math.random()* 3000);
+        }
+        //*<!--! aqui nuestro Callback, este lo hacemos mandandole el valor que vamos a llamar para hacer la operacion y tambien una funcion que nos va a mostrar el resultado de nuestra operacion llamando una funcion anonima ()=> *//
+        cuadradoCallback(0,(value,result)=>{
+            console.log("Inicia Callback");
+            console.log(`Callback: ${value}, ${result}`);
+            //*<!--! Apartir de aqui viene lo que se llama un CallbackHell *//
+            cuadradoCallback(2,(value,result)=>{
+                console.log("Inicia Callback");
+                console.log(`Callback: ${value}, ${result}`);
+                //*<!--! estos se ejecutan uno tras de otro llamando a la misma funcion y dando en este caso resultados distintos pero con lo que necesitamos ver por operacion *//
+                cuadradoCallback(3,(value,result)=>{
+                    console.log("Inicia Callback");
+                    console.log(`Callback: ${value}, ${result}`);
+                    cuadradoCallback(4,(value,result)=>{
+                        console.log("Inicia Callback");
+                        console.log(`Callback: ${value}, ${result}`);
+                        cuadradoCallback(5,(value,result)=>{
+                            console.log("Inicia Callback");
+                            console.log(`Callback: ${value}, ${result}`);
+                            cuadradoCallback(6,(value,result)=>{
+                                console.log("Inicia Callback");
+                                console.log(`Callback: ${value}, ${result}`);
+                                cuadradoCallback(7,(value,result)=>{
+                                console.log("Inicia Callback");
+                                console.log(`Callback: ${value}, ${result}`);
+                                })
+                            })
+                        })
+                    })
+                })
+            })
+        })
+    </script> -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! Promesas -->
+    <!-- <script>
+        function cuadradoPromise(value) {
+            /* REJECT PREGUNTA SI EL VALUE ES UN NUMBERO SI NO ES UN NUMERO !== DICE TRUE Y MANDA EL MENSAJE DE ERROR A LA FUNCION CATCH ERR*/
+            if (typeof value !== "number") {
+                return Promise.reject(`Error, el valor "${value}" ingresado no es un número`);
+            }
+            return new Promise((resolve, reject)=>{
+                setTimeout(() => {
+                    resolve({
+                        value,
+                        result: value * value
+                    })
+                }, 0 | Math.random()* 3000);
+            })
+        }
+        cuadradoPromise(0)
+        .then((obj)=>{
+            console.log(obj);
+            console.log("Inicio Promise");
+            console.log(`Promise: ${obj.value}, ${obj.result}`);
+            return cuadradoPromise(1)
+        })
+        /* AQUI ↓ NO USO PARENTESIS PORQUE ES UN SOLO PARAMETRO*/
+        .then(obj=>{
+            console.log("Inicio Promise");
+            console.log(`Promise: ${obj.value}, ${obj.result}`);
+            return cuadradoPromise(2)
+        })
+        /*el then es muy parecido a lo que llaman callback pero este es mas ordenado*/
+        .then(obj=>{
+            console.log("Inicio Promise");
+            console.log(`Promise: ${obj.value}, ${obj.result}`);
+            return cuadradoPromise(3)
+        })
+        .then(obj=>{
+            console.log("Inicio Promise");
+            console.log(`Promise: ${obj.value}, ${obj.result}`);
+            return cuadradoPromise(4)
+        })
+        .then(obj=>{
+            console.log("Inicio Promise");
+            console.log(`Promise: ${obj.value}, ${obj.result}`);
+            return cuadradoPromise(5)
+        })
+        .then(obj=>{
+            console.log(`Promise: ${obj.value}, ${obj.result}`);
+            console.log("Fin Promise");
+        })
+        //* AQUI MANDAMOS EL ERROR CON UNA FUNCION DEL REJECT QUE ESTA ARRIBA*/
+        .catch(err => console.log(err));
+    </script> -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! Async - Await -->
+    <!-- <script>
+        function cuadradoPromise(value) {
+            /* REJECT PREGUNTA SI EL VALUE ES UN NUMBERO SI NO ES UN NUMERO !== DICE TRUE Y MANDA EL MENSAJE DE ERROR A LA FUNCION CATCH ERR*/
+            if (typeof value !== "number") {
+                return Promise.reject(`Error, el valor "${value}" ingresado no es un número`);
+            }
+            return new Promise((resolve, reject)=>{
+                setTimeout(() => {
+                    resolve({
+                        value,
+                        result: value * value
+                    })
+                }, 0 | Math.random()* 3000);
+            })
+        }
+        async function funcionAsincronaDeclarada() {
+            try {
+                console.log("Inicio Async Function Declarada");
+                let obj = await cuadradoPromise(0);
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+                obj = await cuadradoPromise(1);
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+                obj = await cuadradoPromise(2);
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+                obj = await cuadradoPromise("3");
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+                obj = await cuadradoPromise(4);
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+                obj = await cuadradoPromise(5);
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+                console.log("Fin Async Function");
+            } catch (err) {
+                console.error(err);
+            }
+        }
+        funcionAsincronaDeclarada()
+
+        const funcionAsincronaExpresada = async()=>{
+            try {
+                console.log("Inicio Async Function Expresada");
+                let obj = await cuadradoPromise(6);
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+                obj = await cuadradoPromise(7);
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+                obj = cuadradoPromise(8);
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+                obj = cuadradoPromise(9);
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+                obj = await cuadradoPromise(10);
+                console.log(`Async Function: ${obj.value}, ${obj.result}`);
+                console.log("Fin Async Function");
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        funcionAsincronaExpresada()
+
+    </script> -->
+     <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! Symbols -->
+    <!-- <script>
+        let id = "Hola";
+        let id2 = "Hola";
+        console.log(id === id2);
+
+        /* Symbol es un data de tipo primitivo
+        el symbol crear una referencia unica
+         que no es comparable con ningun objeto */
+        let id3 = Symbol();
+        let id4= Symbol();
+        let ejemplo = Symbol("aqui dentro podemos crear una descripcion de la funcion de nuestro symbolo o ha que refiere");
+        console.log(id3 === id4);
+        console.log(typeof id3, typeof id4);
+        /* Los simbolos suelen usarse para
+        identificar propiedades de los objetos,
+        evitar coliciones entre propiedades y no sobreescribir */
+
+        /*COMO SON REFERENCIAS UNICAS LA BUENA PRACTICA SERIA USARLAS CON CONSTANTE * const **/
+        const NOMBRE = Symbol("nombre");
+        /* 1) PARA USAR LA PROPIEDAD SYMBOL YA TENDRIA QUE ESTAR DECLARADA*/
+        const SALUDAR = Symbol();
+        const persona = {
+            [NOMBRE]: "Leo",
+            edad: 27
+        }
+        console.log(persona);
+        // ESTA PROPIEDAD NO INTERFIERE CON EL OBJETO SYMBOL
+        persona.NOMBRE = "Leonardo"
+        console.log(persona);
+        console.log(persona.NOMBRE);
+        // PARA IMPRIMIR LA PROPIEDAD USAREMOS LLAVES([]) EN VEZ DE PUNTO(.)
+        console.log(persona[NOMBRE]);
+        /* 2) Si queremos crearla despues lo haremos de esta manera usando llavez */
+        persona[SALUDAR] = function () {
+            console.log("hola");
+        }
+        console.log(persona);
+        /* para llamar a la funcion SALUDAR QUE esta dentro de un symbol pues lo hacemos de esta manera*/
+        persona[SALUDAR]();
+        /* si pasamor un for no se mostraran */
+        for (let propiedad in persona) {
+            console.error(propiedad)
+            console.warn(persona[propiedad])
+            // Uno de los atractivos de esta propiedad es que son incognitos
+        }
+        // para mostrar los symbolos que estan dentro usaremos:
+        console.log(Object.getOwnPropertySymbols(persona));
+    </script> -->
+     <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! Sets -->
+    <!-- <script>        
+        const set = new Set([1,1,2,3,4,2,"all","All","hola",{},{},false,false,true]);
+        /* esta estructura es similar a un array con algunas diferencias, una de ellas es que elimina los elementos duplicados de un array*/
+        console.log(set);
+        /*al mostrarlo en la consola se muestra como un objeto con posiciones similares al de un array*/
+
+        const set2 = new Set([]);
+        set2.add(1);
+        set2.add(2);
+        set2.add(2);
+        set2.add(3);
+        set2.add("Hola");
+        set2.add("Hola");
+        set2.add("HOLA");
+        set2.add(true);
+        set2.add(true);
+        set2.add({});
+        set2.add({});
+        console.log(set2);
+        /*con el size nos muestra la cantidad de posiciones que tiene el set*/
+        /*console.log(set2.size);
+        tambn podemos recorrerlo con los metodos for*/
+        for ( i of set) {
+            console.log(i);
+        }
+        console.log("****************");
+        set2.forEach(i => {
+            console.log(i);
+        });
+        /*para acceder a la posicion exacta tendriamos que volverlo un array de dverdad*/
+        console.log(Array.from(set));
+        let arr = Array.from(set2)
+        console.log(arr);
+        console.log(arr[4]);
+        /*y listo se nos muestra en consola */
+        /*///////////////////////////////////*/
+        /*PARA eliminar un elemento de nuestro metodo SET usamos delete, en este ejemplo eliminaremos HOLA de nuestro set2*/
+        console.log(set2);
+        set2.delete("HOLA")
+        console.log(set2);
+        /*///////////////////////////////////*/
+        /*AHORA tambn existe un metodo has que comprueba si el valor ya existe dentro de nuestros datos*/
+        console.log(set2.has("Hola"));/*devulve true*/
+        console.log(set2.has("hola"));/*devuelve false*/
+        /*///////////////////////////////////*/
+        /*SI lo que queremos es limpiar un set usaremos el metodo clear*/
+        set2.clear()
+        console.log(set2);
+    </script> -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! Maps -->
+    <!-- <script>
+        /*MAP funciona  similar a un objeto*/
+        const mapa = new Map();
+        mapa.set("nombre","Leonardo");
+        mapa.set("apellido","Monsalves");
+        mapa.set("edad","27");
+        console.log(mapa);
+        console.log(mapa.size);
+        console.log(mapa.has("correo"));
+        console.log(mapa.has("nombre"));
+        /*para obtener los valores con map tenemos el metodo get*/
+        console.log(mapa.get("nombre"));/*devulve leonardo*/
+        /*tambien podemos sobreescribir los valores*/
+        mapa.set("nombre","Jhondri");
+        console.log(mapa.get("nombre"));/*devuelve jhondri*/
+        /*para eliminar usamos delete*/
+        mapa.delete("apellido");
+        console.log(mapa);
+        /*para recorrer map podemos usar los metodos for*/
+        for ([key,value] of mapa) {
+            console.log(key,value);
+        }
+        const mapa2 = new Map([
+            ["nombre","Elpepe"],
+            ["edad","MesSirve"],
+            ["es un","Meme"],
+            ["funcion",null]
+        ]);
+        console.log(mapa2);
+        const llavesMapa2 = [...mapa2.keys()];
+        const valoresMapa2 = [...mapa2.values()];
+        console.log(llavesMapa2);
+        console.log(valoresMapa2);
+    </script> -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! WeakSets & WeakMaps -->
+    <!-- <script>
+        /*con los weaksets no podemos pasarles valores de esta manera*/
+        // const ws = new WeakSet([1,1,2,3,4,2,"all","All","hola",{},{},false,false,true]);
+        /*para pasarle valores tenemos que almacenarlas en variables literales o constantes y luego almacenarlas con add*/
+        const ws = new WeakSet();
+        let value1 = {"valor":1};
+        let value2 = {"valor":2};
+        let value3 = {true: false};
+        ws.add(value1);
+        ws.add(value2);
+        ws.add(value3);
+        console.log(ws);
+        /*la propiedad size aqui no funciona */
+        /*si ejecutamos un interval por cada segundo muestra las 3 entras*/
+        setInterval(() => {
+            console.log(ws);
+        }, 1000);
+        /*si yo cambio estos valores mientras que el intervalo sigue funcionando el WeakSet limpia o cambia sus valores*/
+        setTimeout(() => {
+            value1 = null;
+            value3 = null;
+        }, 4000);
+        /* ///////////////////////////////////////////////// */
+        /* con los weakmaps no podemos pasarles valores de esta manera*/
+        /*const wm = new WeakMap([
+            ["nombre","Elpepe"],
+            ["edad","MesSirve"],
+            ["es un","Meme"],
+            ["funcion",null]
+        ]);*/
+        /*para otorgarle valores lo hacemos de esta manera*/
+        const wm = new WeakMap()
+        let llave1 = {};
+        let llave2 = {};
+        let llave3 = {};
+        let llave4 = {};
+        wm.set(llave1,1);
+        wm.set(llave2,"hola");
+        wm.set(llave3,false);
+        console.log(wm);
+        /*para verificar si un valor existe*/
+        console.log(wm.has(llave3));
+        console.log(wm.has(llave4));
+        /*para ver el valor exacto usamos*/
+        console.log(wm.get(llave2));
+        console.log(wm.get(llave4));
+        /*para eliminar*/
+        console.log(wm.delete(llave3));
+        console.log("se elimino la llave 3");
+        console.log(wm.get(llave3));
+        setInterval(() => {
+            console.log(wm);
+        }, 1000);
+        /*si yo cambio estos valores mientras que el intervalo sigue funcionando el WeakSet limpia o cambia sus valores*/
+        setTimeout(() => {
+            llave1 = null;
+            llave3 = null;
+        }, 4000);
+    </script> -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! Iterables & Iterators -->
+    <!-- <ul>
+        <li class="epale"><h1>NOOOOOOOOOOOOOO</h1></li>
+        <li class="epale"><h1>NOOOOOOOOOOOOOO</h1></li>
+        <li class="epale"><h1>NOOOOOOOOOOOOOO</h1></li>
+        <li class="epale"><h1>NOOOOOOOOOOOOOO</h1></li>
+    </ul> -->
+    <!-- <script>
+        // let epale = document.querySelectorAll('.epale')
+        // console.log(epale);
+        // for ( i of epale) {
+        //     console.log(i);
+        //     i.style.backgroundColor="red";
+        // }
+        /*El iterable es el cual su contenido se encapsula en posiciones */
+        const iterable = [1,2,3,4,5];
+        const iterable2 = "hola mundo";
+        const iterable3 = new Map([["nombre","leo"],["edad",27]])
+        /*Accedemos al iterador del iterable*/
+        /*El iterador es una especie de corredor que va pasando por una posicion tras otra*/
+        const iterador = iterable[Symbol.iterator]();
+        const iterador2 = iterable2[Symbol.iterator]();
+        const iterador3 = iterable3[Symbol.iterator]();
+
+        console.log(iterable);
+        console.log(iterador);
+        /*la funcion nex nos permite recorrer el iterable, la desventaja es que solo muestra una*/
+        //<!-- ! console.log(iterador.next());
+        /*para mostrar todas las posiciones de nuestro iterable usaremos un metodo while*/
+        let next = iterador.next();
+        let next2 = iterador2.next();
+        let next3 = iterador3.next();
+
+        while (!next.done) {
+            console.log(next.value);
+            next = iterador.next()
+        }
+        while (!next2.done) {
+            console.log(next2.value);
+            next2 = iterador2.next()
+        }
+        while (!next3.done) {
+            console.log(next3.value);
+            next3 = iterador3.next()
+        }
+    </script> -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! Generators -->
+    <!-- <script>
+        //<!--! esto es una funcion iterable y se escribe solo colocando un * delante de funcion 
+        function* iterable() {
+            //<!--! para esta funcion existe una palabra reservada llamada yield, que funciona como un return
+            yield "hola"
+            console.log("hola consola");
+            //<!--! estos yield funcionan como el metodo next, por cada ejecucion de la funcion va a recorrer cada yield existente
+            yield "hola 2"
+            console.log("seguimos con mas instrucciones");
+            yield "hola 3"
+        }
+        //<!--! luego almacenamos nuestra funcion en una variable
+        let iterador = iterable();
+        //<!--! recorremos de esta manera        
+        // console.log(iterador.next());
+        // console.log(iterador.next());
+        // console.log(iterador.next());
+        // console.log(iterador.next());
+        //<!--! para recorrer cada uno de los yield tambn podemos usar un for
+        for ( let i of iterador) {
+            console.log(i);
+        }
+        //<!--! de esta manera cada resultado de una funcion generadora la podemos almacenar en un array
+        const arr = [...iterable()]
+        console.log(arr);
+        
+        function cuadrado(value) {
+            // setTimeout(() => {
+            //     // console.log({value, resultado: value*value});
+            // }, 3000);
+            return console.log({value, resultado: value*value});
+
+        }
+        function* generador() {
+            console.log("Inicia Generador");
+            yield cuadrado(0);
+            yield cuadrado(1);
+            yield cuadrado(2);
+            yield cuadrado(3);
+            yield cuadrado(4);
+            yield cuadrado(5);
+            console.log("Fin del Generador");
+        }
+
+        let gen = generador();
+
+        for (let i of gen) {
+            // console.warn(i);
+        }
+    </script> -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! Proxies -->
+    <!-- <script>
+        /*El proxy es un mecanismo que te permite copiar un objeto en otra instancia y te permite agregar, validar ciertas propiedades y tipos de datos del objeto original y el de la copia */
+
+        /*1)aqui tenemos nuestro objeto litera*/
+        const persona = {
+            nombre:"",
+            apellido:"",
+            edad:0
+        }
+        /*3)este manejador lleva un parametro llamadro set que recive el objeto del que esta trabajando en este caso con 3 parametros y 3 valores*/
+        const manejador = {
+            set(obj,prop,value){
+                /*este condicional valida que otras propiedades que no sean del objeto original, nos envie un mensaje de error*/
+                if (Object.keys(obj).indexOf(prop) === -1) {
+                    console.error(`La propiedad "${prop}" no existe en el objeto persona`);
+                }
+                /*esta validacion nos verifica que los valores esten dentro de los parametros aceptandos y que tambien exista las propiedades nombre y apellido*/
+                if (
+                    (prop === "nombre" || prop === "apellido") &&
+                    !(/^[a-zá-ü\s]+$/gi.test(value))
+                    ) {
+                    console.warn(`La propiedad "${prop}" solo acepta letras y espacios en blanco`);
+                }
+                /*aqui sin ninguna validacion me muesta lo que estoy guardando en los valores*/
+                obj[prop] = value;
+            }
+        }
+        /*2) aqui creamos la copia que recibe el objeto del cual nos vamos a basar y luego el manejador o handler */
+        const jhon = new Proxy(persona, manejador)
+        /*4)aqui le agregamos las propiedades y valores*/
+        jhon.nombre = "Leo";
+        jhon.apellido = "Monsalves";
+        jhon.edad = 27;
+        jhon.twitter = "@JLeonardoMr"
+        /*5)aqui mostraos en consola los objetos Proxy y persona*/
+        console.log(jhon);
+        console.log(persona);
+    </script> -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! Propiedades dinamicas de los Objetos -->
+    <!-- <script>
+        /*las propiedades dinamicas nos permiten crear Propiedades al vuelo mientras se ejecuta un objeto, por ejemplo. Si esperamos la carga de un objeto que tenga 1000 usuarios y a cada uno le queremos colocar un id*/
+        /*aqui le creo un valor aleatorio como prueba al id*/
+        let aleatorio = Math.round(Math.random()*100+5)
+        const objUsuarios = {
+            [`id_${aleatorio}`]:"valor aleatorio"
+        };
+        console.log(objUsuarios);
+        const usuarios = ["Ana","Beto","Carlos","Diana","Elpepe","Fiona","Gabo","Hido","Irayma",];
+        /*aqui mediante un forEach pasamos por cada parte del array para colocarle el indice al id de nustro objeto*/
+        usuarios.forEach((usuario,index)=>objUsuarios[`id_${index}`] = usuario);/*en la manera en que ingremos a nuestro propiedad es usando [] */
+        console.log(objUsuarios);
+
+    </script> -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! this -->
+    <!-- <script>
+        console.log(this);
+        console.log(window);
+        console.log(this === window);/*devuelve true*/
+        this.nombre = "Contexto Global"
+        console.log(this.nombre);
+
+        function imprimir() {
+            console.log(this.nombre);
+        }
+        imprimir()
+        /*this siempre se va a cerrar al contexto donde se encuentre como en este ejemplo*/
+        const obj1 = {
+            nombre:"Contexto Objeto",
+            imprimir: function() {
+                console.log(this.nombre);
+            }
+        }
+        obj1.imprimir()
+        /*aqui la funcion imprimir la heredamos con en obj2 ya que esta creada en el obj1 y veremos como resultado que imprimir en obj2, nos imprime el contexto que se encierra en el. Ya que como hereda la funcion hereda el this tambn y engloba solo a ese scoope */
+        const obj2 = {
+            nombre:"Contexto Objeto 2",
+            imprimir
+        }
+
+        obj2.imprimir()
+        /* el detalle que tienen las arrow function es que no respetan su propio scoope*/
+        const obj3 = {
+            nombre:"Contexto Objeto 2",
+            imprimir:()=>{
+                console.log(this.nombre);
+            }
+        }
+        /*Y nos va a imprimir el scoope global*/
+        obj3.imprimir()
+
+        function Persona(nombre) {
+            this.nombre = nombre;
+            //return console.log(this.nombre);
+            /*Aqui si usamos un funcion dentro de la funcion Persona el metodo this no respera el escoope de su funcion padre, PUES PORQUE? dentro de la logica de la funcion el tiene su propio scoppe y si en su escope no encuentra el valor nombre pues buscara el valor que esta por emcima y ese seria en el scoope global*/
+            // return function() {
+            //     console.log(this.nombre,2);/*imprime Contexto Global*/
+            // }
+            /*para usar una funcion dentro de otra funcion usaremos la arrow function, PUES PORQUE? ya que no tienen su propio scoope pues esta se apoyara de su scoope padre ejemplo */
+            return ()=>{console.log(this.nombre,2);}
+        }
+        let leo = new Persona("leo")
+        leo();
+    </script> -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! call, apply, bind -->
+    <!-- <script>
+        console.log(this);
+        this.lugar = "Contexto Global";
+
+        function saludar(saludo,aQuien) {
+            console.log(`${saludo} ${aQuien} desde el ${this.lugar}`);
+        }
+
+        saludar();
+        const obj = {
+            lugar:"contexto Objeto"
+        }
+        /*con el metodo call usamos la funcion de manera que pasamos parametros y valor y este las imprime como funcion orientada a objeto*/
+        saludar.call(obj, "Hola", "leo");
+        saludar.call(null, "Hola", "leo");
+        /*Lo mismo pasa con apply pero esta funciona de otra manera por ejemplo:*/
+        saludar.apply(obj,["Adios","Leonardo"])
+        saludar.apply(null,["Adios","Leonardo"])
+
+        const persona = {
+            nombre:"leo",
+            saludar: function () {
+                console.log(`Hola ${this.nombre}`);
+            }
+        }
+        persona.saludar()
+        /*con el metodo bind enlacamos las propiedades de un objeto a otro*/
+        const otraPersona = {
+            saludar: persona.saludar.bind(persona)
+        }
+        otraPersona.saludar()
+    </script> -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! JSON -->
+    <!-- <script>
+        console.log("*** JSON.parse ***");
+        console.log(JSON.parse("{}"));
+        console.log(JSON.parse("[1,2,3]"));
+        console.log(JSON.parse("true"));
+        console.log(JSON.parse("false"));
+        console.log(JSON.parse("19"));
+        /*este lo manda con comillas y comillas simples para que json.parse entienda que es un string*/
+        console.log(JSON.parse('"Hola Mundo"'));
+        console.log(JSON.parse("null"));
+        //console.log(JSON.parse("undefined"));
+        console.log(JSON.parse('{ "x": 2, "y": 3 }'));
+        console.log(JSON.parse('{"cadena":"leo","numero":"35","booleano":"true","arreglo":["corre","programar","cocinar"],"objeto":{"twitter": "@JLeonardoMr","email": "jhondri1004@gmail.com"},"nulo": "null"}'));
+
+        console.log("*** JSON.stringify ***");
+        console.log(JSON.stringify({}));
+        console.log(JSON.stringify([1, 2, 3]));
+        console.log(JSON.stringify(true));
+        console.log(JSON.stringify(false));
+        console.log(JSON.stringify(19));
+        console.log(JSON.stringify("Hola Mundo"));
+        console.log(JSON.stringify(null));
+        console.log(JSON.stringify(undefined));
+        console.log(JSON.stringify({ x: 2, y: 3 }));
+    </script> -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! WEB APIs -->
+    <!-- <h1>Web APIs</h1>
+    <h2>DOM: Document Object Model</h2>
+    <h3>BOM: Browser Object Model</h3>
+    <h4>CSSOM: CSS Object Model</h4>
+    <h5>Web APIs</h5>
+    <ul>
+        <li>Eventos</li>
+        <li>Formas</li>
+        <li>AJAX - Fetch</li>
+        <li>History</li>
+        <li>Web Storage</li>
+        <li>Geolocation</li>
+        <li>Drag & Drop</li>
+        <li>Indexed DB</li>
+        <li>Canvas</li>
+        <li>MatchMedia</li>
+        <li>etc...</li>
+    </ul>
+    <div id="Elpepe">
+
+    </div>
+    <script>
+        let voices, utterance;
+
+        function speakVoice() {
+            setTimeout(() => {
+                voices = this.getVoices();
+                utterance = new SpeechSynthesisUtterance("aeiou"); 
+                console.log();
+                utterance.pitch = 1;
+                utterance.rate = 1;
+                utterance.volume = 1;
+                utterance.voice = voices[1];
+                console.log(utterance);
+                speechSynthesis.speak(utterance);
+            }, 1000);
+            
+        };
+
+        speechSynthesis.addEventListener('voiceschanged', speakVoice);
+
+
+        // const voices = window.speechSynthesis.getVoices();
+        // const lastVoice = voices[voices.length - 1];
+        // const utterance = new SpeechSynthesisUtterance('Mamaguevo quelo marico ercoño verga!');
+        // utterance.pitch = 1;  // a little lower
+        // utterance.rate = 1;   // a little faster
+        // utterance.volume = 1; // a little quieter
+        // window.speechSynthesis.speak(utterance);
+
+
+        // let texto = "Mamaguevo quelo marico ercoño"
+        // const hablar = texto=> speechSynthesis.speak(new SpeechSynthesisUtterance(texto));
+        // hablar(texto);
+
+        //este beta nos permite seleccionar algo y colocarlo en la consola
+        setTimeout(() => {
+            console.log(document.getSelection().toString());
+        }, 5000);
+    </script> -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! DOM: Nodos, Elementos y Selectores -->
+    <h1>Manejo del dom</h1>
+    <p id="queEs">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, rem possimus, necessitatibus tempore eligendi iusto dolores eum sit commodi quae ratione quod? Molestias officiis ipsa repudiandae cumque eum facere dicta.
+    </p>
+    <!-- VE ESTA VAINA MARICO  -->
+    <!-- nav#menu>ul>li*5>a{Seccion$} -->
+    <!-- DA COMO RESULTADO ESTO: -->
+    <nav id="menu">
+        <ul>
+            <li><a href="#">Seccion1</a></li>
+            <li><a href="#">Seccion2</a></li>
+            <li><a href="#">Seccion3</a></li>
+            <li><a href="#">Seccion4</a></li>
+            <li><a href="#">Seccion5</a></li>
+        </ul>
+    </nav>
+    <input type="text" name="nombre" placeholder="nombre">
+    <a class="link-practica_12" href="practica12.html" style="background-color: #EEFA42; color: #252525; accent-color: red;" data-description="Document Object Model" data-id="1">Practica 12 .-/ ☼↓→☺☻♥ áë</a>
+    <hr>
+    
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! DOM: Clases CSS -->
+    <div class="container">
+        <div class="container_rotate">
+            <h1>Restar</h1>
+            <div id="rotate" class="rotate">
+                <div class="container_circle">
+                    <div class="circle c1 circle-rotate">
+                        1<!-- <img src="https://placeimg.com/200/200/tech" alt="tech">                         -->
+                    </div>
+                    <div class="circle c2 circle-rotate">
+                        2<!-- <img src="https://placeimg.com/200/200/animal" alt="animal"> -->
+                    </div>
+                    <div class="circle c3 circle-rotate">
+                        3<!-- <img src="https://placeimg.com/200/200/people" alt="people"> -->
+                    </div>
+                </div>
+                <div class="container_circle2">
+                    <div class="circle c4 circle-rotate">
+                        4<!-- <img src="https://placeimg.com/200/200/nature" alt="nature"> -->
+                    </div>
+                    <div class="circle c5 circle-rotate">
+                        5<!-- <img src="https://placeimg.com/200/200/arch" alt="arch"> -->
+                    </div>
+                </div>
+                <div class="container_circle3">
+                    <div class="circle c6 circle-rotate">
+                        6<!-- <img src="https://placeimg.com/200/200/space" alt="space"> -->
+                    </div>
+                    <div class="circle c7 circle-rotate">
+                        7<!-- <img src="https://placeimg.com/200/200/dog" alt="dog"> -->
+                    </div>
+                    <div class="circle c8 circle-rotate">
+                        8<!-- <img src="https://placeimg.com/200/200/cat" alt="cat"> -->
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! DOM: Traversing: Recocciendo el DOM -->
+    <br>
+    <!-- <div class="cards-container">
+        <section class="cards">
+            <img src="https://placeimg.com/200/200/tech" alt="tech">
+        </section>
+        <section class="cards">
+            <img src="https://placeimg.com/200/200/animal" alt="animal">
+        </section>
+        <section class="cards">
+            <img src="https://placeimg.com/200/200/people" alt="people">
+        </section>
+        <section class="cards">
+            <img src="https://placeimg.com/200/200/arch" alt="arch">
+        </section>
+        <section class="cards">
+            <img src="https://placeimg.com/200/200/nature" alt="nature">
+        </section>
+    </div> -->
+
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!--! DOM: Templates HTML -->
+    
+    <template id="template-card">
+        <figure class="cards">
+            <img>
+            <figcaption></figcaption>
+        </figure>
+    </template>
+
+    <script src="js/practica12.js"></script>
+</body> 
+</html>
