@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio #2</title>
+    <link rel="stylesheet" href="css/ejercicio2.css">
+</head>
+<body>
+    <div>
+        <h1>Ejercicios del DOM</h1>
+        <div id="darkmode" class="darkmode">
+            <div class="moon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </div>
+            <div class="sun">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#303841" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/>
+                </svg>
+            </div>
+            <button class="btn-darkmode" type="button"></button>
+        </div>
+    </div>
+    <div id="navigator" class="navigator"></div>
+    <nav id="hamburger" class="hamburgerNav"></nav>
+    <div class="navContainer">
+        <nav id="navMenu" class="navMenu"></nav>
+    </div>
+    <a  id="uplp" class="uplp">▲</a>
+    <main>
+        <section>
+            <h2>Relog Digital y Alarma Sonora</h2>
+            <h3>ejercicio 1</h3>
+            <div class="div" id="sec1">
+                <div class="timeH">
+                </div>
+                <button class="startTime" type="button">Start</button>
+                <button class="stopTime" type="button">Stop</button>
+                <button class="startAlarm" type="button">Start</button>
+                <button class="stopAlarm" type="button">Stop</button>
+            </div>
+        </section>
+        <section>
+            <h2>Movimiento y Colisiones</h2>
+            <h3>ejercicio 2</h3>
+            <div class="div" id="sec2">
+                <div id="circle" class="circle"></div>
+            </div>
+        </section>
+        <section>
+            <h2>Cuenta Regresiva</h2>
+            <h3>ejercicio 3</h3>
+            <div class="div" id="sec3"></div>
+        </section>
+        <section>
+            <h2>Responsive con JavaScript</h2>
+            <h3>ejercicio 4</h3>
+            <div class="div" id="sec4"></div>
+        </section>
+        <section>
+            <h2>Responsive Tester</h2>
+            <h3>ejercicio 5</h3>
+            <div class="div" id="sec5">
+                <input type="url" placeholder="URL" id="testUrl">
+                <input type="number" placeholder="width=*" id="testW">
+                <input type="number" placeholder="height=*" id="testH">
+                <button id="openWindow">Abrir</button>
+                <button id="closeWindow">cerrar</button>
+            </div>
+        </section>
+        <section>
+            <h2>Detección de Dispositivo</h2>
+            <h3>ejercicio 6</h3>
+            <div class="div" id="sec6"></div>
+        </section>
+        <section>
+            <h2>Detección del estado de la Red</h2>
+            <h3>ejercicio 7</h3>
+            <div class="div" id="sec7">
+            </div>
+        </section>
+        <section>
+            <h2>Deteccion de la WebCam</h2>
+            <h3>ejercicio 8</h3>
+            <div class="div" id="sec8"></div>
+        </section>
+        <section>
+            <h2>Detección de la Geolocalización</h2>
+            <h3>ejercicio 9</h3>
+            <div class="div" id="sec9"></div>
+        </section>
+        <section>
+            <h2>Filtros  de Búsqueda</h2>
+            <h3>ejercicio 10</h3>
+            <div class="div" id="sec10">
+                <h4>Filtro de busqueda</h4>
+                <input type="search" placeholder="Buscar" class="inputSearch" id="inputSearch">
+                <article class="cards">
+                    <figure class="card">
+                        <img src="img/11.jpg" width="170" height="275" alt="Nature">
+                        <figcaption>Nature</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <img src="img/22.png" width="170" height="275" alt="Any">
+                        <figcaption>Any</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <img src="img/33.jpg" width="170" height="275" alt="Tech">
+                        <figcaption>Tech</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <img src="img/44.jpg" width="170" height="275" alt="Animals">
+                        <figcaption>Animals</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <img src="img/55.png" width="170" height="275" alt="People">
+                        <figcaption>People</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <img src="img/66.png" width="170" height="275" alt="Architecture">
+                        <figcaption>Architecture</figcaption>
+                    </figure>
+                    <figure class="card">
+                        <img src="img/77.png" width="170" height="275" alt="Animal">
+                        <figcaption>Animal</figcaption>
+                    </figure>
+                </article>
+            </div>
+        </section>
+        <section>
+            <h2>Sorteo Digital</h2>
+            <h3>ejercicio 11</h3>
+            <div class="div" id="sec11">
+                <ul>
+                    <li class="li">JavaScript</li>
+                    <li class="li">PHP</li>
+                    <li class="li">JAVA</li>
+                    <li class="li">C</li>
+                    <li class="li">Python</li>
+                    <li class="li">Ruby</li>
+                    <li class="li">Go</li>
+                    <li class="li">Visual Basic</li>
+                    <li class="li">Rust</li>
+                    <li class="li">Perl</li>
+                </ul>
+                <button id="sorteo">Obtener Ganador</button>
+            </div>
+        </section>
+        <section>
+            <h2>Slider Responsive</h2>
+            <h3>ejercicio 12</h3>
+            <div class="div" id="sec12">
+                <div class="carrusel">
+                    <img src="img/carrusel1.jpg" alt="carrusel1">
+                    <img src="img/carrusel2.jpg" alt="carrusel2" id="img1" >
+                    <img src="img/carrusel3.jpg" alt="carrusel3" id="img2" >
+                    <img src="img/carrusel4.jpg" alt="carrusel4" id="img3" >
+                    <span class="btn-carrusel_left"><p>&laquo;</p></span>
+                    <span class="btn-carrusel_right"><p>&raquo;</p></span>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Viddeo Inteligente</h2>
+            <h3>ejercicio 13</h3>
+            <div class="div" id="sec13">
+                <video src="img/Sweet_but_Psycho.mp4" controls muted></video>
+            </div>
+        </section>
+        <section>
+            <h2>Narrador</h2>
+            <h3>ejercicio 14</h3>
+            <div class="div" id="sec14">
+                <select name="" id="speech-select">
+                    <option selected>*--Elige una voz--*</option>
+                </select>
+                <textarea name="" id="speech-text" cols="50" rows="5" placeholder="ingresa un texto para leer..."></textarea>
+                <button id="speech-btn">Leer Texto</button>
+            </div>
+        </section>
+        <section>
+            <h2>ejercicio</h2>
+            <h3>ejercicio 15</h3>
+            <div class="div" id="sec15">
+                
+            </div>
+        </section>
+    </main>
+    <script src="js/ejercicio2.js" type="module" ></script>
+</body>
+</html>
