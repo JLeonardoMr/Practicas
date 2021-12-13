@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD API REST AJAX</title>
+</head>
+<body>
+    <h1>CRUD API REST AJAX</h1>
+    <section id="crud">
+        <article>
+            <h2 class="crud-title">Agregar User</h2>
+            <form class="crud-form">
+                <input type="text" name="name" id="" placeholder="Nombre" required autocomplete="off">
+                <input type="text" name="username" id="" placeholder="Username" required autocomplete="off">
+                <input type="email" name="email" id="" placeholder="Email" required autocomplete="on">
+                <input type="submit" value="Enviar">
+                <input type="hidden" name="id">
+            </form>
+
+        </article>
+        <article>
+            <h2>Ver Users</h2>
+            <table class="crud-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Usuario</th>
+                        <th>Email</th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </article>
+    </section>
+    <template id="crud-template">
+        <tr>
+            <td class="name">Leo</td>
+            <td class="user">enphatsu</td>
+            <td class="email">enphatsu@gmail.com</td>
+            <td>
+                <button class="edit">Editar</button>
+                <button class="delete">Eliminar</button>
+            </td>
+        </tr>
+    </template>
+    <script>
+        const d = document,
+        $table = d.querySelector('.crud-table'),
+        $form = d.querySelector('.crud-form'),
+        $title = d.querySelector('.crud-title'),
+        $template = d.getElementById('crud-template').content,
+        $fragment = d.createDocumentFragment();
+
+        const ajax = (options) =>{
+            let {url,method,success,error,data} = options;
+            const xhr = new XMLHttpRequest();
+
+            xhr.addEventListener('readystatechange',e=>{
+                if (xhr.readyState !== 4) return;
+                if (xhr.status >= 200 && xhr.status < 300){
+                    let json = JSON.parse(xhr.responseText);
+                    success(json);
+                }else{
+                    let message = xhr.statusText||'Ocurrio un error';
+                    error(`Error ${xhr.status}:${message}`)
+                }
+            })
+
+            xhr.open(method || "GET",url);
+            xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
+            xhr.send(JSON.stringify(data));
+        }
+        const getAll = () =>{
+            ajax({
+                method:'GET',
+                url:'http://localhost:3000/users',
+                success:(res)=>{
+                    console.log(res);
+                    res.forEach(element => {
+                        $template.querySelector('.name').textContent = element.name;
+                        $template.querySelector('.user').textContent = element.username;
+                        $template.querySelector('.email').textContent = element.email;
+                        $template.querySelector('.edit').dataset.id = element.id;
+                        $template.querySelector('.edit').dataset.name = element.name;
+                        $template.querySelector('.edit').dataset.username = element.username;
+                        $template.querySelector('.edit').dataset.email = element.email;
+                        $template.querySelector('.delete').dataset.id = element.id;
+                        $template.querySelector('.delete').dataset.name = element.name;
+                        $template.querySelector('.delete').dataset.username = element.username;
+                        $template.querySelector('.delete').dataset.email = element.email;
+                        
+
+                        let $clone = d.importNode($template, true);
+
+                        $fragment.appendChild($clone)
+                    });
+                    $table.querySelector('tbody').appendChild($fragment)
+                },
+                error:(err)=>{
+                    console.log(err);
+                    $table.insertAdjacentHTML('afterend',`<p><b>${err}</b></p>`)
+                },
+                data:null
+            })
+        }
+        d.addEventListener('DOMContentLoaded',getAll);
+        d.addEventListener('submit',e=>{
+            if (e.target === $form) {
+                e.preventDefault();
+                if (!e.target.id.value) {
+                    //CREATE-POST
+                    ajax({
+                        url:'http://localhost:3000/users',
+                        method:"POST",
+                        success:(res)=>location.reload(),
+                        error: ()=>$table.insertAdjacentHTML('afterend',`<p><b>${err}</b></p>`),
+                        data:{
+                            name:e.target.name.value,
+                            username:e.target.username.value,
+                            email:e.target.email.value
+                        },
+                    })
+                }else{
+                    //UPDATE-PUT
+                    ajax({
+                        url:`http://localhost:3000/users/${e.target.id.value}`,
+                        method:"PUT",
+                        success:(res)=>location.reload(),
+                        error: ()=>$table.insertAdjacentHTML('afterend',`<p><b>${err}</b></p>`),
+                        data:{
+                            name:e.target.name.value,
+                            username:e.target.username.value,
+                            email:e.target.email.value
+                        },
+                    })
+                }
+            }
+        })
+        d.addEventListener('click',e=>{
+            if (e.target.matches('.edit')) {
+                $title.textContent='Editar Santo';
+                $form.name.value = e.target.dataset.name;
+                $form.username.value = e.target.dataset.username;
+                $form.email.value = e.target.dataset.email;
+                $form.id.value = e.target.dataset.id;
+            }
+            if (e.target.matches('.delete')) {
+                let isDelete = confirm(`¿ Estas Seguro de eliminar: ${e.target.dataset.name}, ${e.target.dataset.username}, ${e.target.dataset.email} ?`)
+                if (isDelete) {
+                    //DELETE-DELETE
+                    ajax({
+                        url:`http://localhost:3000/users/${e.target.dataset.id}`,
+                        method:"DELETE",
+                        success:(res)=>location.reload(),
+                        error: ()=>alert(err)
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>
