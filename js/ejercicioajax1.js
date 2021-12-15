@@ -7,6 +7,7 @@ addEventListener('DOMContentLoaded',e=>{
             '.peo',
             '.arch',
             '.nat');
+    DOMAjax()
 })
 
 
