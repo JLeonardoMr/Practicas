@@ -13,30 +13,39 @@ addEventListener('DOMContentLoaded',e=>{
     preventLoad()
 })
 
-const $FILES = document.getElementById('files');
+const $FILES = document.getElementById('files'),
+    $div = document.querySelector('.sec1_content-inp');
 
 const UPLOADER = (file) =>{
-    console.log(file);
+    // console.log(file);
     const XHR = new XMLHttpRequest(),
         formData = new FormData();
     //este beta recibe todo como un formulario, esto quiere decir que cada archivo que suba quedara registrado como parte de un formulario
-    console.log(formData.get('file'));
     formData.append('file',file);
-    console.log(formData.get('file'));
+    // console.log(formData.get('file'));
 
     XHR.addEventListener('readystatechange',e=>{
         if (XHR.readyState !== 4) return;
-        if (XHR.status >= 200 && XHR.statusText < 300) {
-            console.log(XHR.responseText);
+        if (XHR.status >= 200 && XHR.status < 300) {
+            let json = JSON.parse(XHR.responseText)
+            console.log(json);
         }else{
-            let messsage = XHR.statusText || "Ocurrio un error";
-            error(`Error ${XHR.status}: ${messsage}`);
+            let message = XHR.statusText || "Ocurrio un error";
+            error(`Error ${XHR.status}: ${message}`);
         }
     })
 
-    XHR.open("POST","js/uploader.php");
+    XHR.open("POST","php/uploader.php");
     XHR.setRequestHeader('enc-type','multipart/form-data');
     XHR.send(formData);
+}
+
+const progressUpload = (file) =>{
+    const $progress = document.createElement('progress'),
+        $span = document.createElement('span');
+
+        $progress.value = 0;
+        $progress.max = 100;
 }
 
 document.addEventListener('change',e=>{

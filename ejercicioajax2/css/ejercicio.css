@@ -55,8 +55,12 @@ header img{
 }
 .sec1_content-inp{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+progress{
+    margin-top: 1rem;
 }
 .sec1_content-par{
     margin: 10px 0;
