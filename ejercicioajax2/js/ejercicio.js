@@ -40,8 +40,9 @@ const UPLOADER = (file) =>{
 }
 
 document.addEventListener('change',e=>{
-    console.log($FILES[0]);
     if (e.target === $FILES) {
+        let elpepe = e.target.files
+        console.log(elpepe[0]);
         // console.log(e.target.files);
         const files = Array.from(e.target.files);
         files.forEach(el => UPLOADER(el));
