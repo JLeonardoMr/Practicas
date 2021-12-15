@@ -17,10 +17,11 @@ const $FILES = document.getElementById('files');
 
 const UPLOADER = (file) =>{
     console.log(file);
-    const XHR = new XMLHttpRequest();
-    const formData = new FormData();
+    const XHR = new XMLHttpRequest(),
+        formData = new FormData();
     //este beta recibe todo como un formulario, esto quiere decir que cada archivo que suba quedara registrado como parte de un formulario
-    formData.append("files",file);
+    formData.append('file',file);
+    console.log(formData);
 
     XHR.addEventListener('readystatechange',e=>{
         if (XHR.readyState !== 4) return;
@@ -33,11 +34,11 @@ const UPLOADER = (file) =>{
     })
 
     XHR.open("POST","/module/uploader.php");
-    XHR.setRequestHeader('enc-type','multipart/form-data'),
+    XHR.setRequestHeader('enc-type','multipart/form-data');
     XHR.send(formData);
 }
 
-addEventListener('change',e=>{
+document.addEventListener('change',e=>{
     if (e.target === $FILES) {
         // console.log(e.target.files);
         const files = Array.from(e.target.files);
