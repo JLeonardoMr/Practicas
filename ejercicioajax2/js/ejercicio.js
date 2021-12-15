@@ -34,8 +34,8 @@ const UPLOADER = (file) =>{
         }
     })
 
-    XHR.open("POST","uploader.php");
-    // XHR.setRequestHeader('enc-type','multipart/form-data');
+    XHR.open("POST","js/uploader.php");
+    XHR.setRequestHeader('enc-type','multipart/form-data');
     XHR.send(formData);
 }
 
