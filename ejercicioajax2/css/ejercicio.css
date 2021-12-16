@@ -63,8 +63,13 @@ header img{
     height: 150px;
     border-radius: 30px;
     border: thick dashed var(--color-leter);
+    padding: auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
 /*ANIMACION DROP*/
 .dragYdrop-active{
     background-color: var(--color-button);
@@ -82,11 +87,6 @@ header img{
     }
 }
 /*FIN ANIMACION DROP*/
-.dragYdrop p {
-    color: var(--color-button);
-    font-weight: bold;
-    margin: auto;
-}
 .sec1_content-inp{
     margin-top: 1rem;
     display: flex;
@@ -111,4 +111,68 @@ progress{
     width: 60%;
     height: 290px;
     object-fit: cover;
+}
+/**FORMULARIO*/
+.sec1_content-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sec1_content-form label{
+    font-weight: bold;
+}
+.sec1_content-form input{
+    margin-top: 10px;
+    width: 60%;
+    outline: none;
+}
+#btn{
+    width: auto;
+    padding: 4px 6px;
+    border-radius: 3px;
+}
+#btn:active{
+    background-color: grey;
+    color: honeydew;
+}
+#textarea{
+    margin-top: 10px;
+    width: 60%;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+}
+.sec1_content-form input::placeholder{
+    padding: 0 3px;
+}
+#textarea::placeholder{
+    padding: 0 3px;
+}
+.valid{
+    border: solid 1px green;
+    background-color: rgb(232, 252, 232);
+}
+.invalid{
+    border: solid 1px red;
+    background-color: rgb(255, 246, 246);
+}
+.alert-error{
+    color: red;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    box-shadow: 1px 1px 3px black;
+    background-color: rgb(252, 226, 226);
+}
+.alert-success{
+    color: green;
+    width: 10rem;
+    padding: 0.5rem 0;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    box-shadow: 1px 1px 3px black;
+    background-color: rgb(209, 250, 209);
 }

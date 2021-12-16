@@ -1,4 +1,3 @@
-const $FILES = document.getElementById('files');
 const UPLOADER = (file) =>{
     // console.log(file);
     const XHR = new XMLHttpRequest(),
@@ -11,7 +10,6 @@ const UPLOADER = (file) =>{
         if (XHR.readyState !== 4) return;
         if (XHR.status >= 200 && XHR.status < 300) {
             let json = JSON.parse(XHR.responseText)
-            console.log(json);
         }else{
             let message = XHR.statusText || "Ocurrio un error";
             error(`Error ${XHR.status}: ${message}`);
@@ -47,14 +45,11 @@ const progressUpload = (file,div) =>{
         setTimeout(() => {
             $div.removeChild($progress);
             $div.removeChild($span);
-            $FILES.value = "";
         }, 1000);
     })
 }
 
 export function fileList(file,div) {
-    if (file === $FILES) {
-        const files = Array.from(file.files);
-        files.forEach(el => progressUpload(el,div));
-    }
+    const files = Array.from(file.files);
+    files.forEach(el => progressUpload(el,div));
 }

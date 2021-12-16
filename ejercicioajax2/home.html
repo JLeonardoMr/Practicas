@@ -18,12 +18,12 @@
             </div>
             <br>
             <div class="sec1_content-dragYdrop">
-                <article class="dragYdrop">
-                    <p>ARRASTRA Y SUELTA TUS ARCHIVOS</p>
+                <article data-drop class="dragYdrop">
+                    ARRASTRA Y SUELTA TUS ARCHIVOS
                 </article>
             </div>
             <div class="sec1_content-inp">
-                <input type="file" name="files" id="files" multiple>
+                <input type="file" name="files" data-files multiple>
                 <progress value="70" max="100"></progress>
                 <p>70% - Ejemplo.text</p>
             </div>
@@ -36,7 +36,8 @@
             </div> 
         </section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
     <script src="js/ejercicio.js" type="module"></script>
+    <script src="js/files.js" type="module"></script>
 </body>
 </html>
