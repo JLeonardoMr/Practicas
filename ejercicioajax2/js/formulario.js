@@ -6,7 +6,6 @@ const $name = document.getElementById('nombre'),
     $form = document.querySelector('.sec1_content-form')
 
 $btn.addEventListener('click',e=>{
-    e.preventDefault();
     let error = validarCampos();
     if (error[0]) {
         let $alertMsg = document.createElement('span');
@@ -18,20 +17,7 @@ $btn.addEventListener('click',e=>{
             let alertRemove = alert.parentNode
             alertRemove.removeChild(alert)
         }, 3000);
-    }else{
-        let $alertMsg = document.createElement('span');
-        $form.insertAdjacentElement('beforeend',$alertMsg);
-        $alertMsg.classList.add('alert-success');
-        $alertMsg.innerHTML = `Exito al enviar su comentario`;
-        setTimeout(() => {
-            let alert = document.querySelector('.alert-success');
-            let alertRemove = alert.parentNode
-            alertRemove.removeChild(alert)
-        }, 3000);
     }
-
-    // <span class="alert-error">Error al enviar su comentario</span>
-    // <span class="alert-success">Exito al enviar su comentario</span>
 })
 
 const validarCampos = ()=>{
@@ -79,3 +65,45 @@ const validarCampos = ()=>{
     }
     return error
 }
+
+
+document.addEventListener('submit',e=>{
+    e.preventDefault();
+    //! AQUI GUARDO TODOS LOS VALORES DE MI FORMULARIO
+    //! NAME="KEY" "O MEJOR DICHO" EL VALOR DEL ATRIBUTO
+    //! Y "VALUE" EL VALOR DEL INPUT 
+    //! HACIENDO UN {KEY:"VALUE"} DE TODOS LOS INPUT
+    const formData = new FormData(e.target)
+    //? fetch("https://formsubmit.co/ajax/jhondri1004@gmail.com",{
+    fetch("php/form.php",{
+        method:"POST",
+        headers:{
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        //! AQUI LO AGREGO COMO UNA VARIABLE
+        //! PARA MANDARLO EN FORMATO JSON
+        // body:JSON.stringify(formData)
+        //? este es para el localhost
+        boby:formData,
+        //? 'cors' este beta es para los email desde el servido es importante
+        // mode:'cors'
+    })
+    .then(res=>res.json())
+    .then(json=>{
+        console.log(json);
+        let $alertMsg = document.createElement('span');
+        $form.insertAdjacentElement('beforeend',$alertMsg);
+        $alertMsg.classList.add('alert-success');
+        $alertMsg.innerHTML = `Exito al enviar su comentario`;
+        setTimeout(() => {
+            let alert = document.querySelector('.alert-success');
+            let alertRemove = alert.parentNode
+            alertRemove.removeChild(alert)
+        }, 3000);
+        $form.reset()
+    })
+    .catch(error=>{
+        console.log(error);
+    });
+})
