@@ -1,0 +1,29 @@
+.zapatos{
+    display: flex;
+    flex-wrap: wrap;
+}
+.zapatos>*{
+    /* esto pinta asi y pinta bonito */
+    /* flex-grow: ; flex-shrink: ; flex-basis: ; */
+    flex: 2 2 150px;
+    margin: 0.3rem;
+    border-radius: 10px;
+}
+.zapato{
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+.zapato img{
+    
+    width: 250px;
+}
+.zapato figcaption{
+    
+    margin: auto;
+}
+.zapato:hover{
+    opacity: .8;
+    transform: scale(.95);
+}

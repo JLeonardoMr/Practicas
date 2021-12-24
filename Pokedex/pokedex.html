@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="css/pokestyles.css">
+</head>
+<body>
+    <!-- pokeBody-hover -->
+    <main class="pokeBody">
+        <!-- btn-animate -->
+        <button class="PokeDex-btn"><img  class="loader" src="svg/puff.svg" alt="Cargando..."></button>
+        <!-- pokeUp-hover -->
+        <div class="pokeUp">
+            <!-- pokeUp-left-hover -->
+            <div class="pokeUp-left"></div>
+            <!-- pokeUp-center-hover -->
+            <div class="pokeUp-center"></div>
+            <!-- pokeUp-right-hover -->
+            <div class="pokeUp-right"></div>
+        </div>
+        <!-- pokePage-hover -->
+        <div class="pokePage">
+            <div class="pokeShow"></div>
+            <div class="Pokemons"></div>
+            <nav class="pokeNav"></nav>
+        </div>
+        <!-- pokeDown-hover -->
+        <div class="pokeDown">
+            <!-- pokeDown-left-hover -->
+            <div class="pokeDown-left"></div>
+            <!-- pokeDown-center-hover -->
+            <div class="pokeDown-center"></div>
+            <!-- pokeDown-right-hover -->
+            <div class="pokeDown-right"></div>
+        </div>
+    </main>
+    <template id="template">
+        <figure>
+            <img src="./svg/puff.svg" alt="Loading...">
+            <figcaption></figcaption>
+        </figure>
+    </template>
+    <script src="js/poke.js" type="module"></script>
+</body>
+</html>

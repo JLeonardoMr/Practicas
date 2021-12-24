@@ -1,0 +1,154 @@
+*,
+*::after,
+*::before{
+    box-sizing:content-box;
+    padding: 0;
+    margin: 0;
+}
+/*! HEADER*/
+header{
+    display: flex;
+    background-color: #252525;
+    padding: 5px 10px;
+}
+header h1{
+    color: antiquewhite;
+}
+header nav{
+    display: flex;
+    margin: auto;
+}
+header nav label{
+    color: antiquewhite;
+    font-weight: bold;
+}
+/*! MAIN*/
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: auto;
+    grid-template-areas: 
+    "section lyrics"
+    ;
+}
+main .section_1{
+    grid-area: section;
+    display: flex;
+    flex-direction: column;
+}
+main .section_1 figure{
+    display: flex;
+    flex-direction: column;
+}
+main .section_1 img{
+    max-width: 90%;
+    padding: 5%;
+    margin: auto;
+}
+main .section_1 figcaption{
+    font-size: 3vw;
+    padding: 0 5%;
+    font-weight: bold;
+}
+main .section_1 ul{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    max-width: 94%;
+    padding: 3%;
+}
+main .section_1 ul li{
+    display: flex;
+    flex-direction: column;
+}
+main .section_1 p{
+    max-width: 96%;
+    padding: 0 3%;
+    text-align: justify;
+    overflow: scroll;
+    height: 35vw;
+}
+main .section_2 {
+    grid-area: lyrics;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2%;
+}
+main .section_2 cite{
+    max-width: 90%;
+    padding: 5%;
+}
+main .section_2 p {
+    max-width: 96%;
+    padding: 0 3%;
+    text-align: center;
+}
+main .section_2 button{
+    margin: 3vw auto;
+    width: 7rem;
+    height: 2rem;
+    padding: 0 15vw;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #eee;
+    background-color: #252525;
+    border: solid 2px brown;
+    transition: transform .3s ease-out;
+}
+main .section_2 button:hover{
+    background-color: #505050;
+    transform: scale(1.1);
+}
+main .section_2 figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px black;
+    border-radius: 15px;
+    margin: 2% auto;
+    max-width: 45%;
+    width: 45%;
+    overflow: hidden;
+}
+main .section_2 figure img{
+    max-width: 100%;
+}
+main .section_2 figure figcaption{
+    font-weight: bold;
+}
+main .section_2 figure a{
+    text-decoration: none;
+    color: brown;
+}
+main .section_2 img{
+    /* width: 100%; */
+
+}
+main .section_2 ul{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 38%;
+    list-style: none;
+    margin: 2.5% 2.5%;
+    padding: 2.5% 2.5%;
+    border: dotted 3px brown;
+}
+main .section_2 ul li{
+    margin: 5px 0;
+}
+/* ! MEDIA SCREAM 600px */
+@media screen and (max-width:600px){
+    main{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "section"
+        "lyrics"
+        ;
+    }
+    header{
+        flex-direction: column;
+    }
+}

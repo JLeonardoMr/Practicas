@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 2 Naturaleza</title>
     <link rel="stylesheet" href="css/ejercicio.css">
+    <link rel="stylesheet" href="css/ejercicioPay.css">
+
 </head>
 <body>
     <header></header>
@@ -14,16 +16,27 @@
             <div class="sec1_content-title">
                 <h1 data-title>Naturaleza</h1>
             </div>
+            <div id="zapatos" class="zapatos">
+
+            </div>
             <div class="sec1_content-par">
                 <p data-par>La naturaleza es un concepto utilizado para referirse al mundo material o universo material, incluyendo los fenómenos del mundo físico, la materia inerte generada como parte de procesos sin la intervención humana, y al fenómeno de la vida, que incluye también a los humanos. La naturaleza se extiende desde el mundo subatómico al galáctico. La palabra naturaleza procede del latín natura que significa perteneciente o relativo a la naturaleza o conforme a la cualidad o propiedad de las cosas, carácter natural. La naturaleza también se encuentra diferenciada de lo sobrenatural.</p>
             </div>
             <div class="sec1_content-img">
-                <img src="https://placeimg.com/200/200/nature" alt="nature" data-img>
+                <!-- <img src="https://placeimg.com/200/200/nature" alt="nature" data-img> -->
             </div>
         </section>
     </main>
     <footer></footer>
-    <script src="js/ejercicio.js" type="module"></script>
+    <template id="zapatos-template">
+        <figure class="zapato">
+            <img>
+            <figcaption></figcaption>
+        </figure>
 
+    </template>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./js/strip-checkout.js" type="module"></script>
+    <script src="js/ejercicio.js" type="module"></script>
 </body>
 </html>
