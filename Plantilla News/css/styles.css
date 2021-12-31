@@ -1,0 +1,96 @@
+*,
+*::after,
+*::before{
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+/*------------------------------------------------------------*/
+body{
+    width: 90%;
+    margin: auto;
+    background: grey;
+}
+/*---------------------HEADER---------------------------------*/
+header{
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+}
+/*------------------------------------------------------------*/
+.topHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: .5rem 0;
+}
+.topHeader ul{
+    display: flex;
+    list-style: none;
+    font-size: .7rem;
+}
+.topHeader ul li,
+.topHeader ul li a{
+    padding: 0 .3rem;
+    text-decoration: none;
+}
+.topHeader ul li a{
+    color: brown;
+}
+.topHeader ul:first-child li:nth-child(1) ,
+.topHeader ul:first-child li:nth-child(2) ,
+.topHeader ul:first-child li:nth-child(3) {
+    border-right: solid 1px black;
+}
+.topHeader ul:last-child li:nth-child(2) ,
+.topHeader ul:last-child li:nth-child(3) {
+    border-right: solid 1px black;
+}
+/*------------------------------------------------------------*/
+.midHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 2vw 1vw 3vw;
+}
+.midHeader div div{
+    color: brown;
+    padding: 0 0 0 .6rem;
+}
+.midHeader span{
+    color: rgb(104, 104, 104) ;
+    background-color: rgb(232, 231, 231);
+    border: solid 1px rgb(138, 138, 138);
+    padding: 1.3rem 16vw;
+}
+/*------------------------------------------------------------*/
+.bootHeader{
+    background-color: #252525;
+}
+.bootHeader ul{
+    display: flex;
+    list-style: none;
+}
+.bootHeader ul li{
+    font-size: .9rem;
+    margin: .5rem;
+    color: whitesmoke;
+}
+/*-----------------------FIN HEADER---------------------------*/
+/*------------------------------------------------------------*/
+main{
+    display: flex;
+    background-color: whitesmoke;
+}
+main section{
+    width: 70vw;
+}
+main aside{
+    padding: .5rem;
+    width: 30vw;
+    border-left:solid 1px slategray;
+}
+main aside > *{
+    margin: .9rem 0;
+}
